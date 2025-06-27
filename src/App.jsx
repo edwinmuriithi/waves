@@ -1,13 +1,20 @@
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from './components/Header/Navbar'
 import HomePage from "./components/Home/HomePage";
-import Navbar from "./components/Header/Navbar";
+import HeroSection from "./components/HeroSection";
 
-const App = () => {
+
+export default function App() {
+
   return (
-    <main>
-      <Navbar />
-      <HomePage />
-    </main>
+    <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/Hero" element={<HeroSection />} />
+        </Routes>
+    </Router>
   );
-};
+}
 
-export default App;
