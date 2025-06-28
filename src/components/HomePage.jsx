@@ -1,9 +1,13 @@
 import React from 'react'
 import Navbar from './Navbar'
+import HeroSection from './HeroSection'
 
 function HomePage() {
   return (
-    <div><Navbar /></div>
+    <div>
+      <Navbar />
+      <HeroSection />
+    </div>
   )
 }
 
