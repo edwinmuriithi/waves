@@ -49,7 +49,7 @@ function Navbar() {
           ))}
         </ul>
         <div>
-          <button className="flex items-center gap-2 bg-blue-500 text-white m-2 p-2 rounded-b-xl ">
+          <button className="flex items-center gap-2 bg-blue-500 text-white m-2 p-2 rounded-b-xl hover:bg-blue-700">
             <FaHandHoldingHeart />
             Donate <span className="hidden md:flex">to our cause</span>
             <FaArrowRightLong />
