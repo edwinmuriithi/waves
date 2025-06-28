@@ -1,7 +1,6 @@
 const LandingPage = () => {
   return (
     <section className="h-screen">
-      {" "}
       <div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
