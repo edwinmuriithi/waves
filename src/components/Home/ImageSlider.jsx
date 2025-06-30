@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const newsData = [
   {
     image: "https://via.placeholder.com/600x300?text=News+1",
-    title: "Program Jenga wall",
+    title: "Program Jenga wallgit ",
     desciption: "This is the first breaking news item.",
   },
   {
