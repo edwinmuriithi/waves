@@ -20,7 +20,7 @@ const items = [
   },
   {
     image: marine3,
-    title: "sometopic 2",
+    title: "Sometopic 2",
     description: "Colorful reef full of vibrant species.",
   },
   {
@@ -40,19 +40,31 @@ const items = [
   },
   {
     image: marine7,
-    title: "Some topic 5",
+    title: "Some topic 6",
     description: "A serene ocean scene with marine fauna.",
   },
 ];
 
 export default function HeroSection() {
   const [index, setIndex] = useState(0);
+  const [transitionDirection, setTransitionDirection] = useState("right");
+
   useEffect(() => {
     const id = setInterval(() => {
-      setIndex((i) => (i + 1) % items.length);
+      handleNext();
     }, 10000);
     return () => clearInterval(id);
   }, []);
+
+  const handleNext = () => {
+    setTransitionDirection("right");
+    setIndex((prevIndex) => (prevIndex + 1) % items.length);
+  };
+
+  const handlePrev = () => {
+    setTransitionDirection("left");
+    setIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
+  };
 
   return (
     <div style={{ position: "relative", height: "400px" }}>
@@ -68,12 +80,63 @@ export default function HeroSection() {
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             textShadow: "0 0 5px rgba(0,0,0,0.7)",
+            transform:
+              i === index
+                ? transitionDirection === "right"
+                  ? "translateX(0)"
+                  : "translateX(-100%)"
+                : "translateX(100%)",
+            transition: "transform 0.5s ease-in-out",
           }}
         >
-          <h1>{item.title}</h1>
-          <p>{item.description}</p>
+          <h1 className="text-4xl">{item.title}</h1>
+          <p className="text-lg">{item.description}</p>
         </div>
       ))}
+
+      {/* Navigation buttons */}
+      <div className="absolute inset-0 flex items-center justify-between px-4">
+        <button
+          onClick={handlePrev}
+          className="bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg"
+          aria-label="Previous slide"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <button
+          onClick={handleNext}
+          className="bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg"
+          aria-label="Next slide"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 }
