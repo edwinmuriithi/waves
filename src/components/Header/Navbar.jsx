@@ -26,8 +26,13 @@ function Navbar() {
       dropdown: [
         { name: "Our History", path: "/about#history" },
         { name: "Our Mission", path: "/about#mission" },
-        { name: "Our Approach", path: "/AboutUs/OurApproach" },
+
+        { name: "Our Approach", path: "/About/OurApproach" },
+        { name: "Our Team", path: "/about#team" },
+
+       
         { name: "Our Team", path: "/AboutUs/OurTeam" },
+
       ],
     },
     {
