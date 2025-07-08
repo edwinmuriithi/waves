@@ -1,5 +1,6 @@
 const OurApproach = () => {
   return (
+
     <div className="bg-gray-50">
       {/* Header Section */}
       <div className="h-60 text-white p-4 font-sans flex justify-center flex-col items-center bg-green-950">
@@ -79,6 +80,7 @@ const OurApproach = () => {
             </ul>
           </div>
         ))}
+
       </div>
     </div>
   );
