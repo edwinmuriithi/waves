@@ -27,7 +27,7 @@ function HomePage() {
       {/* Programs Section (Slider) */}
       <section className="max-w-7xl mx-auto px-4 py-12 text-center">
         <h1 className="text-center text-3xl font-semibold mb-6 border-b-4 border-blue-200 inline-block">
-          Our Programs
+          Meet Our Team
         </h1>
         <ImageSlider />
       </section>

@@ -4,31 +4,38 @@ import { Link } from "react-router-dom";
 const newsData = [
   {
     id: 1,
-    image: "https://placehold.co/800x500/2563EB/FFF?font=lora&text=Program+1",
-    title: "Ocean Conservation Program",
+    image: "https://lapa.africa/images/team/amy.jpg",
+    title: "Amy P. Wilson",
     description:
-      "Join our initiative to protect marine biodiversity through sustainable practices.",
+      "Amy P. Wilson is the co-founder of Lawyers for Animal Protection in Africa. She is currently working as the Brooks Institute for Animal Rights Law and Policy Fellow at UCLA School of Law's Animal Law and Policy Program. Amy is the first South African attorney to graduate with a Master&apos;s degree in Animal Law. She has over ten years of legal experience and her research focuses on the intersection of the rights of animals, humans and the environment in law and policy.",
+  },
+    {
+    id: 5,
+    image: "https://lapa.africa/images/team/judy.jpg",
+    title: "Judy Muriithi",
+    description:
+    "Judy Muriithi is a co-founder of Lawyers for Animal Protection in Africa and the current CEO. She is a passionate environmental conservation attorney with expertise in wildlife forensics, data analysis, and risk assessment. Judy leads capacity-building initiatives to promote sound governance in the fight against illegal wildlife trade."
   },
   {
     id: 2,
-    image: "https://placehold.co/800x500/3B82F6/FFF?font=lora&text=Program+2",
-    title: "Coastal Cleanup",
+    image: "https://lapa.africa/images/team/corazon.jpg",
+    title: "Corazon Nafula",
     description:
-      "Volunteer for our beach cleanup events and help keep our shores pristine.",
+      "Corazon is the 2024 Veterinary Student of the Year and is engaged with LAPA as both a media and animal health advisor, advancing animal health and promoting sustainable food systems.",
   },
   {
     id: 3,
-    image: "https://placehold.co/800x500/93C5FD/FFF?font=lora&text=Program+3",
-    title: "Marine Education",
+    image: "https://lapa.africa/images/team/gakuo.png",
+    title: "Githeiya Gakuo",
     description:
-      "Educational programs to raise awareness about ocean ecosystems.",
+      "Githeiya Gakuo is a dynamic professional with a strong background in governance, environmental conservation, and security. He has demonstrated leadership in combating illegal wildlife trade and promoting anti-money laundering techniques.",
   },
   {
     id: 4,
-    image: "https://placehold.co/800x500/2563EB/FFF?font=lora&text=Program+4",
-    title: "Sustainable Fishing",
+    image: "https://lapa.africa/images/team/celeste.png",
+    title: "Celeste Viljoen",
     description:
-      "Promoting responsible fishing practices to maintain fish populations.",
+      "Celeste is a law student at the University of Cape Town, South Africa, and a member of the winning team at the World Moot on International Law and Animal Rights 2024 Sub-Saharan Regional Rounds.",
   },
 ];
 
@@ -69,7 +76,7 @@ const ImageSlider = () => {
             <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-2xl z-10"></div>
           )}
           <div
-            className={`transition-all duration-500 ease-in-out ${
+            className={`transition-all duration-500 ease-in-out object-contain p-1 ${
               transitionDirection === "right" ? "slide-right" : "slide-left"
             }`}
           >
@@ -135,10 +142,10 @@ const ImageSlider = () => {
             {newsData[currentIndex].description}
           </p>
           <Link
-            to="/programs"
+            to="/our-team"
             className="inline-flex items-center gap-2 bg-white text-blue-600 hover:text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-blue-600 transition duration-300 shadow-md"
           >
-            Learn more
+            Meet Our Team
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4"
