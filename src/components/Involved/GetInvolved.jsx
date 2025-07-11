@@ -1,5 +1,9 @@
-const GetInvolved = () => {
-  return <h2>Get Involved</h2>;
-};
+import React from 'react'
 
-export default GetInvolved;
+function GetInvolved() {
+  return (
+    <div>GetInvolved</div>
+  )
+}
+
+export default GetInvolved

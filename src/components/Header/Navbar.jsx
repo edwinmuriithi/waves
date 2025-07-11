@@ -47,6 +47,7 @@ function Navbar() {
         { name: "Advancing Ocean Communities", path: "" },
       ],
     },
+    { name: "Take Action", path: "/take-action" },
     { name: "Get Involved", path: "/get-involved" },
     { name: "Contact Us", path: "/contact" },
   ];

@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OurApproach from "./components/About/OurApproach";
 import OurTeam from "./components/About/OurTeam";
 import OurMission from "./components/About/OurMission";
+import TakeAction from "./components/TakeAction/TakeAction";
 
 const App = () => {
   return (
@@ -22,9 +23,9 @@ const App = () => {
           <Route path="/programs" element={<OurPrograms />} />
           <Route path="/publications" element={<Publications />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/take-action" element={<TakeAction />} />
           <Route path="/get-involved" element={<GetInvolved />} />
-
-           <Route path="/About/OurApproach" element={<OurApproach />} />
+          <Route path="/About/OurApproach" element={<OurApproach />} />
 
           <Route path="AboutUs/OurTeam" element={<OurTeam />} />
   
