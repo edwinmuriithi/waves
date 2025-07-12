@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import marine1 from "../../assets/OceanImageBank_AlexMustard_04.jpg";
-import marine2 from "../../assets/OceanImageBank_AnitaKainrath_MangrovePhotographyAwards_01.jpg";
-import marine3 from "../../assets/OceanImageBank_CinziaOseleBismarck_02.jpg";
-import marine4 from "../../assets/OceanImageBank_CinziaOseleBismarck_22.jpg";
-import marine5 from "../../assets/OceanImageBank_RenataRomeo_41.jpg";
-import marine6 from "../../assets/OceanImageBank_JordanRobins_01.jpg";
-import marine7 from "../../assets/OceanImageBank_RenataRomeo_43.jpg";
+import marine1 from "../../assets/ocean1.jpg";
+import marine2 from "../../assets/ocean2.jpg";
+import marine3 from "../../assets/ocean3.jpg";
+import marine4 from "../../assets/ocean4.jpg";
+import marine5 from "../../assets/ocean5.jpg";
+import marine6 from "../../assets/ocean6.jpg";
 
 const items = [
   {
@@ -36,11 +35,6 @@ const items = [
   {
     image: marine6,
     title: "Some topic 5",
-    description: "A serene ocean scene with marine fauna.",
-  },
-  {
-    image: marine7,
-    title: "Some topic 6",
     description: "A serene ocean scene with marine fauna.",
   },
 ];
