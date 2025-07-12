@@ -22,32 +22,18 @@ function Navbar() {
   const menuItems = [
     { name: "Home", path: "/" },
     {
-      name: "About us",
+      name: "About",
       dropdown: [
-        { name: "Our History", path: "/about#history" },
-        { name: "Our Mission", path: "/about#mission" },
-
-        { name: "Our Approach", path: "/About/OurApproach" },
-        { name: "Our Team", path: "/about#team" },
-
-       
-        { name: "Our Team", path: "/AboutUs/OurTeam" },
-
+        { name: "About Us", path: "/about" },
+        { name: "Our Programs", path: "/our-programs" },
+        { name: "Our Approach", path: "/our-approach" },
+        { name: "Our Team", path: "/our-team" },
       ],
     },
-    {
-      name: "Our Programs",
-      path: "/programs",
-      dropdown: [
-        { name: "Sustainable Fishing", path: "" },
-        { name: "Bottom Trawling", path: "" },
-        { name: "Sharks", path: "" },
-        { name: "Government Relations", path: "" },
-        { name: "Smart Ocean Planning", path: "" },
-        { name: "Advancing Ocean Communities", path: "" },
-      ],
-    },
+
+    { name: "Take Action", path: "/take-action" },
     { name: "Get Involved", path: "/get-involved" },
+    { name: "Resources", path: "/resources" },
     { name: "Contact Us", path: "/contact" },
   ];
 
