@@ -11,7 +11,7 @@ function HomePage() {
         <h1 className="text-3xl font-bold border-b-4 inline-block border-blue-200 mb-6">
           About Waves
         </h1>
-        <p className="font-serif mb-4 max-w-3xl mx-auto ">
+        <p className="font-serif mb-4 max-w-3xl text-2xl text-justify mx-auto ">
           <strong>
             {" "}
             WAVES (Wildlife Advocates for Vital Ecosystems and Species){" "}

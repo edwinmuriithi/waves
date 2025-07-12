@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import marine1 from "../../assets/ocean1.jpg";
 import marine2 from "../../assets/ocean2.jpg";
 import marine3 from "../../assets/ocean3.jpg";
@@ -9,33 +10,27 @@ import marine6 from "../../assets/ocean6.jpg";
 const items = [
   {
     image: marine1,
-    title: "Sometopic",
-    description: "Marine imagery with fish and coral.",
+    title: "Marine Justice & Legal Advocacy Program",
   },
   {
     image: marine2,
-    title: "Sometopic 1",
-    description: "Deep sea life: turtles, jellyfish, and more.",
+    title: "Operation JAWS ",
   },
   {
     image: marine3,
-    title: "Sometopic 2",
-    description: "Colorful reef full of vibrant species.",
+    title: "Education & Community Engagement",
   },
   {
     image: marine4,
-    title: "Sometopic 3",
-    description: "Schools of fish swimming in open water.",
+    title: "Marine Justice & Legal Advocacy Program",
   },
   {
     image: marine5,
-    title: "Some topic 4",
-    description: "Underwater plants and marine invertebrates.",
+    title: "Operation JAWS",
   },
   {
     image: marine6,
-    title: "Some topic 5",
-    description: "A serene ocean scene with marine fauna.",
+    title: "Education & Community Engagement",
   },
 ];
 
@@ -62,6 +57,15 @@ export default function HeroSection() {
 
   return (
     <div style={{ position: "relative", height: "400px" }}>
+      <Link
+        to="/"
+        className="absolute bottom-0 left-0 p-5 backdrop-blur-3xl z-50"
+      >
+        <div className="text-white font-sans font-bold text-start">
+          <h1 className="text-5xl underline mb-3 font-bold">Give Today</h1>
+          <p>We couldn't do our ocean conservation work without you</p>
+        </div>
+      </Link>
       {items.map((item, i) => (
         <div
           key={i}
@@ -83,8 +87,9 @@ export default function HeroSection() {
             transition: "transform 0.5s ease-in-out",
           }}
         >
-          <h1 className="text-4xl">{item.title}</h1>
-          <p className="text-lg">{item.description}</p>
+          <h1 className="absolute md:relative text-center text-2xl backdrop-blur-sm top-1/4 md:top-1 md:text-5xl">
+            {item.title}
+          </h1>
         </div>
       ))}
 
