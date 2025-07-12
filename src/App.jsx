@@ -9,7 +9,6 @@ import GetInvolved from "./components/Involved/GetInvolved";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OurApproach from "./components/About/OurApproach";
 import OurTeam from "./components/About/OurTeam";
-import OurMission from "./components/About/OurMission";
 import TakeAction from "./components/TakeAction/TakeAction";
 
 const App = () => {
@@ -20,7 +19,7 @@ const App = () => {
         <Routes>
           <Route path="/" exact element={<HomePage />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/programs" element={<OurPrograms />} />
+          <Route path="/our-programs" element={<OurPrograms />} />
           <Route path="/resources" element={<Publications />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/take-action" element={<TakeAction />} />

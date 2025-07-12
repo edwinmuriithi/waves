@@ -25,6 +25,7 @@ function Navbar() {
       name: "About",
       dropdown: [
         { name: "About Us", path: "/about" },
+        { name: "Our Programs", path: "/our-programs" },
         { name: "Our Approach", path: "/our-approach" },
         { name: "Our Team", path: "/our-team" },
       ],
