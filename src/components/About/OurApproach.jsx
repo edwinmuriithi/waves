@@ -3,7 +3,7 @@ const OurApproach = () => {
 
     <div className="bg-gray-50">
       {/* Header Section */}
-      <div className="h-60 text-white p-4 font-sans flex justify-center flex-col items-center bg-green-950">
+      <div className="h-60 text-white p-4 font-sans flex justify-center flex-col items-center bg-blue-950">
         <h1 className="font-medium text-4xl">Our Approach</h1>
         <p className="text-2xl font-serif">How we handle things here at Waves</p>
       </div>
