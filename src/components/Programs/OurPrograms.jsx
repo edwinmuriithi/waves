@@ -1,127 +1,85 @@
-const OurPrograms = () => {
-  return (
-    <div className="flex flex-col font-serif text-gray-700">
-      <h1 className="text-center text-4xl font-sans font-bold underline mt-5 ">
-        Our Programs
-      </h1>
-      <section className="mb-5 ml-10 mr-10 mt-10 text-justify leading-double  ">
-        <h2 className="font-bold text-2xl mb-5">
-          1. Marine Justice & Legal Advocacy Program
-        </h2>
-        <p className="font-serif">
-          <strong>Objective:</strong>
-          To strengthen Kenya’s legal and institutional frameworks for marine
-          biodiversity protection by promoting robust, enforceable laws and
-          accountability mechanisms that safeguard endangered marine species and
-          ensure justice within the Blue Economy.
-        </p>
-        <h3 className="font-bold mt-2 mb-2">Why It Matters:</h3>
-        <p className="font-serif">
-          Legal frameworks are the backbone of conservation. However, Kenya’s
-          existing laws and policies often lack specificity, enforcement power,
-          or alignment with international best practices. Gaps in regulation,
-          weak compliance mechanisms, and limited public participation in
-          decision-making have left marine ecosystems vulnerable to
-          exploitation, particularly through unregulated bycatch, IUU (Illegal,
-          Unreported, and Unregulated) fishing, and poorly monitored licensing
-          regimes.
-        </p>
-        <p className="font-serif">
-          This program ensures that the rule of law is not just on paper, but
-          implemented, enforced, and responsive to evolving ecological threats.
-        </p>
-      </section>
-      <section className="mb-5 ml-10 mr-10 mt-10 text-justify leading-double ">
-        <h2 className="font-bold text-2xl mb-5">
-          2. Operation JAWS (Justice Against Wildlife Smugglers)
-        </h2>
-        <p className="font-serif">
-          Operation JAWS is a bold and targeted investigative intervention led
-          by the WAVES consortium, designed to expose and dismantle criminal
-          syndicates involved in the trafficking of shark fins and other
-          endangered marine species. The operation uses a mix of covert
-          investigations, forensic intelligence, legal action, and strategic
-          communications to bring high-level wildlife criminals to justice while
-          galvanizing policy and enforcement reforms.
-        </p>
-        <p className="font-serif">
-          The name “JAWS” is symbolic, turning the narrative away from the
-          vilified shark to the true predators: transnational crime syndicates
-          profiting from marine destruction.
-        </p>
-        <h3 className="font-bold mt-2 mb-2">Goals of Operation JAWS:</h3>
-        <ul>
-          <li>
-            Expose and disrupt organized shark fin trafficking operations active
-            in Kenya and the Western Indian Ocean.
-          </li>
-          <li>
-            Document evidence of environmental and economic crimes linked to
-            illegal shark harvesting and export.
-          </li>
-          <li>
-            Support legal action to arrest, charge, and prosecute high-profile
-            traffickers.
-          </li>
-          <li>
-            Raise public and political pressure to reform marine governance and
-            improve international cooperation against wildlife crime.
-          </li>
-        </ul>
-        <h3 className="font-bold mt-2  mb-2">Theory of Change:</h3>
-        <h4 className="font-bold mb-2">Document → Inform → Disrupt</h4>
-        <ol>
-          <li>
-            <strong>Document:</strong> Covertly investigate and collect
-            credible, admissible evidence against key players, vessels, and
-            companies engaged in illegal shark finning.
-          </li>
-          <li>
-            <strong>Inform: </strong>Disseminate findings through trusted media,
-            stakeholder briefings, and public campaigns to generate pressure for
-            action.
-          </li>
-          <li>
-            <strong>Disrupt:</strong>Use litigation, law enforcement
-            collaboration, and global advocacy to dismantle trafficking
-            operations and push for regulatory reform.
-          </li>
-        </ol>
-      </section>
+import React from "react";
 
-      <section className="mb-5 ml-10 mr-10 mt-10 text-justify leading-double  ">
-        <h2 className="font-bold text-2xl mb-5">
-          3. Education & Community Engagement
-        </h2>
-        <h3 className="font-bold mt-2 mb-2">Objectives:</h3>
-        <p className="font-serif">
-          To foster a culture of marine stewardship and conservation action
-          among Kenya’s coastal communities—especially youth and artisanal
-          fishers—through targeted education, outreach, and capacity-building
-          programs that elevate local voices, traditional knowledge, and civic
-          engagement.
-        </p>
-        <h3 className="font-bold mt-2 mb-2">Why It Matters:</h3>
-        <p className="font-serif">
-          Marine conservation cannot succeed without the meaningful
-          participation of the people who live closest to the ocean. Yet, many
-          coastal communities remain under-informed, underrepresented, and
-          under-resourced in national and regional marine governance processes.
-        </p>
-        <p className="font-serif">
-          Misconceptions about marine species (such as the vilification of
-          sharks), coupled with economic pressures and limited access to legal
-          and ecological information, often result in overfishing, harmful
-          practices, or complicity in trafficking networks.
-        </p>
-        <p className="font-serif">
-          This program bridges the knowledge-to-action gap by transforming
-          passive awareness into active guardianship of Kenya’s marine
-          ecosystems.
-        </p>
-      </section>
-    </div>
+const OurProgram = () => {
+  return (
+    <section className="bg-blue-50 text-blue-900 py-16 px-6 md:px-16">
+      <div className="max-w-5xl mx-auto space-y-16">
+
+        {/* Header */}
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-8 text-blue-800">
+          Our Program
+        </h1>
+
+        {/* Marine Justice & Legal Advocacy */}
+        <div className="bg-white rounded-2xl shadow-lg p-8">
+          <div className="flex items-center gap-4 mb-4">
+            {/* Scroll/Law Icon */}
+            <svg className="w-8 h-8 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 3H7a2 2 0 0 0-2 2v14a3 3 0 1 0 6 0h10a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM7 5h13v12H11a3 3 0 0 0-2 2H7V5z" />
+            </svg>
+            <h2 className="text-2xl md:text-3xl font-semibold text-blue-800">
+              Marine Justice & Legal Advocacy Program
+            </h2>
+          </div>
+          <p className="text-lg mb-4">
+            <strong>Objective:</strong> To strengthen Kenya’s legal and institutional frameworks for marine biodiversity protection by promoting robust, enforceable laws and accountability mechanisms that safeguard endangered marine species and ensure justice within the Blue Economy.
+          </p>
+          <p className="text-base leading-relaxed">
+            <strong>Why It Matters:</strong> Kenya’s laws often lack enforcement or alignment with global best practices. Gaps in regulation, poor compliance, and low public participation make marine ecosystems vulnerable. This program ensures marine protection laws are implemented, enforced, and evolve with ecological threats.
+          </p>
+        </div>
+
+        {/* Operation JAWS */}
+        <div className="bg-blue-100 rounded-2xl shadow-md p-8 border-l-4 border-blue-600">
+          <div className="flex items-center gap-4 mb-4">
+            {/* Shark Fin Icon */}
+            <svg className="w-8 h-8 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M2 13s2.29-8.59 11-11c0 0 3.88 2.63 5 7 0 0-3.42-.76-7.08 3.44C7.26 16.4 6.91 18 6.91 18H2v-5z" />
+            </svg>
+            <h2 className="text-2xl md:text-3xl font-semibold text-blue-800">
+              Operation JAWS (Justice Against Wildlife Smugglers)
+            </h2>
+          </div>
+          <p className="text-lg mb-4">
+            A bold investigative intervention to expose and dismantle criminal networks trafficking shark fins and other endangered marine species. It combines covert investigations, legal action, and public advocacy to hold high-level wildlife criminals accountable.
+          </p>
+          <h3 className="text-xl font-semibold mb-2 text-blue-700">Goals of Operation JAWS:</h3>
+          <ul className="list-disc list-inside space-y-2 mb-4">
+            <li>Disrupt organized shark fin trafficking in Kenya and the WIO.</li>
+            <li>Document environmental and economic crimes tied to illegal exports.</li>
+            <li>Prosecute high-profile traffickers.</li>
+            <li>Build pressure for governance reform and international cooperation.</li>
+          </ul>
+          <h3 className="text-xl font-semibold mb-2 text-blue-700">Theory of Change: <em>Document → Inform → Disrupt</em></h3>
+          <ul className="list-disc list-inside space-y-2">
+            <li><strong>Document:</strong> Collect admissible evidence on illegal finning operations.</li>
+            <li><strong>Inform:</strong> Share findings via media and public briefings.</li>
+            <li><strong>Disrupt:</strong> Take legal and enforcement action to dismantle networks.</li>
+          </ul>
+        </div>
+
+        {/* Education & Community Engagement */}
+        <div className="bg-white rounded-2xl shadow-lg p-8">
+          <div className="flex items-center gap-4 mb-4">
+            {/* People/Community Icon */}
+            <svg className="w-8 h-8 text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V20h14v-3.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V20h6v-3.5c0-2.33-4.67-3.5-7-3.5z" />
+            </svg>
+            <h2 className="text-2xl md:text-3xl font-semibold text-blue-800">
+              Education & Community Engagement
+            </h2>
+          </div>
+          <p className="text-lg mb-4">
+            <strong>Objective:</strong> To build a culture of marine stewardship among Kenya’s coastal communities, especially youth and artisanal fishers, through education, outreach, and empowerment.
+          </p>
+          <p className="text-base leading-relaxed">
+            <strong>Why It Matters:</strong> Many coastal communities are excluded from marine governance. Misconceptions about sharks, economic pressures, and lack of access to knowledge often lead to unsustainable practices. This program bridges the gap between awareness and action through campaigns, schools, and local partnerships.
+          </p>
+        </div>
+
+      </div>
+    </section>
   );
 };
 
-export default OurPrograms;
+export default OurProgram;
