@@ -29,7 +29,7 @@ const Contact = () => {
   return (
     <div>
       {/* Header */}
-      <div className="h-40 text-white p-4 font-sans flex justify-center flex-col items-center bg-green-950">
+      <div className="h-40 text-white p-4 font-sans flex justify-center flex-col items-center bg-blue-950">
         <h1 className="font-medium text-4xl">Contact Us</h1>
         <p className="text-2xl font-serif">Let's get in touch</p>
       </div>
@@ -55,11 +55,6 @@ const Contact = () => {
               <strong>Contact</strong> <br />
               Mobile: +254716152699 <br />
               Mail: info@lapa.africa
-            </p>
-            <p className="mt-4">
-              <strong>Working hours</strong> <br />
-              Mon - Fri: 08:00 - 17:00 <br />
-              Sat & Sun: 08:00 - 12:00
             </p>
           </div>
 
@@ -110,13 +105,13 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="bg-green-700 hover:bg-green-800 transition-colors duration-200 text-white py-2 px-6 rounded mt-2 self-start"
+              className="bg-blue-700 hover:blue-800 transition-colors duration-200 text-white py-2 px-6 rounded mt-2 self-start"
             >
               Submit
             </button>
 
             {submitted && (
-              <p className="text-green-400 text-sm mt-2">Message sent! We'll get back to you soon.</p>
+              <p className="text-blue-400 text-sm mt-2">Message sent! We'll get back to you soon.</p>
             )}
           </form>
         </div>

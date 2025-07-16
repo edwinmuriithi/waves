@@ -60,7 +60,7 @@ function GetInvolved() {
             <div className="p-4 flex flex-col justify-between h-[230px]">
               <h3 className="text-lg font-semibold mb-2 text-gray-800">{item.heading}</h3>
               <p className="text-sm text-gray-600 mb-4">{item.text}</p>
-              <button className="mt-auto bg-green-700 hover:bg-green-800 text-white py-2 px-4 rounded-md w-fit">
+              <button className="mt-auto bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded-md w-fit">
                 {item.btn}
               </button>
             </div>
