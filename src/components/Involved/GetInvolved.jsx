@@ -31,7 +31,7 @@ function GetInvolved() {
   return (
     <section className="bg-blue-50 text-blue-900 py-16 px-6 md:px-16">
       {/* Header Image */}
-      <div className="rounded-xl overflow-hidden shadow-md mb-12">
+      <div className="rounded-xl overflow-hidden hover:shadow-md mb-12 shadow-[inset_-4px_-4px_10px_rgba(0,0,0,0.2)]">
         <img
           src="https://lapa.africa/images/support.jpg"
           alt="Crab in Water Bottle"
@@ -55,17 +55,17 @@ function GetInvolved() {
         {data.map((item, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 hover:scale-105 flex flex-col"
+            className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300  flex flex-col"
           >
             <img
               src={item.image}
               alt={item.heading}
-              className="h-48 w-full object-cover"
+              className="h-48 w-full object-cover hover:scale-105"
             />
-            <div className="p-5 flex flex-col justify-between flex-grow">
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">{item.heading}</h3>
+            <div className="p-5 flex flex-col justify-between flex-grow ">
+              <h3 className="text-xl font-semibold text-blue-800 mb-2 hover:underline decoration-cyan-500 decoration-4 mb-4 transition-all duration-700 ease-in-out">{item.heading}</h3>
               <p className="text-sm text-blue-700 mb-4">{item.text}</p>
-              <button className="mt-auto bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-md self-start">
+              <button className="mt-auto bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-md self-start hover:scale-105">
                 {item.btn}
               </button>
             </div>
