@@ -11,27 +11,27 @@ function GetInvolved() {
     {
       image: "https://lapa.africa/images/get-involved/donate12.jpg",
       heading: "Donate",
-      text: "Support our work by making a donation.Your contribution helps us continue our mission",
-      btn: "Donate to Our Course",
+      text: "Support our work by making a donation. Your contribution helps us continue our mission.",
+      btn: "Donate to Our Cause",
     },
     {
       image: "https://lapa.africa/images/elephant.jpg",
       heading: "Partner with Us",
-      text: "Become a partner and collaborate with us on projects that promote sustainability and conservation",
+      text: "Become a partner and collaborate with us on projects that promote sustainability and conservation.",
       btn: "Become a Partner",
     },
     {
       image: "https://lapa.africa/images/lion.jpg",
-      heading: "Leave a gift in your will",
-      text: "Find out how you can join thousands worldwide who have left a legacy gift in their Will to LAPA to help continue our essential work.",
+      heading: "Leave a Gift in Your Will",
+      text: "Find out how you can leave a legacy gift in your will to support marine conservation and justice.",
       btn: "Leave a Gift",
     },
   ];
 
   return (
-    <section className="max-w-7xl mx-auto">
+    <section className="bg-blue-50 text-blue-900 py-16 px-6 md:px-16">
       {/* Header Image */}
-      <div>
+      <div className="rounded-xl overflow-hidden shadow-md mb-12">
         <img
           src="https://lapa.africa/images/support.jpg"
           alt="Crab in Water Bottle"
@@ -40,9 +40,14 @@ function GetInvolved() {
       </div>
 
       {/* Intro Text */}
-      <div className="text-center mt-12 mb-8 font-medium font-serif text-2xl text-gray-700">
-        <p>Discover how you can support Lawyers for Animal Protection in Africa in our</p>
-        <p>fight for a better future for animals.</p>
+      <div className="text-center mb-16 max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-4">
+          Get Involved with WAVES
+        </h2>
+        <p className="text-lg md:text-xl text-blue-700">
+          Discover how you can support Wildlife Advocates for Vital Ecosystems and Species (WAVES)
+          in our fight for ocean justice and marine biodiversity protection.
+        </p>
       </div>
 
       {/* Cards Grid */}
@@ -50,17 +55,17 @@ function GetInvolved() {
         {data.map((item, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300 hover:scale-105"
+            className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 hover:scale-105 flex flex-col"
           >
             <img
               src={item.image}
               alt={item.heading}
               className="h-48 w-full object-cover"
             />
-            <div className="p-4 flex flex-col justify-between h-[230px]">
-              <h3 className="text-lg font-semibold mb-2 text-gray-800">{item.heading}</h3>
-              <p className="text-sm text-gray-600 mb-4">{item.text}</p>
-              <button className="mt-auto bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded-md w-fit">
+            <div className="p-5 flex flex-col justify-between flex-grow">
+              <h3 className="text-xl font-semibold text-blue-800 mb-2">{item.heading}</h3>
+              <p className="text-sm text-blue-700 mb-4">{item.text}</p>
+              <button className="mt-auto bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-md self-start">
                 {item.btn}
               </button>
             </div>
