@@ -30,7 +30,6 @@ function Navbar() {
         { name: "Our Team", path: "/our-team" },
       ],
     },
-
     { name: "Take Action", path: "/take-action" },
     { name: "Get Involved", path: "/get-involved" },
     { name: "Resources", path: "/resources" },
@@ -66,15 +65,16 @@ function Navbar() {
                   <span className="cursor-pointer">{item.name}</span>
                   <ul className="absolute hidden group-hover:block bg-blue-300 text-white shadow-lg rounded-md min-w-max z-10">
                     {item.dropdown.map((subItem) => (
-                      <li
-                        key={subItem.name}
-                        className="px-4 py-2 hover:bg-blue-400"
-                      >
+                      <li key={subItem.name} className="px-4 py-2">
                         {subItem.path ? (
                           <NavLink
                             to={subItem.path}
                             className={({ isActive }) =>
-                              `relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 `
+                              `relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-500 ${
+                                isActive
+                                  ? "after:w-full  font-bold"
+                                  : "after:w-0 hover:after:w-full"
+                              }`
                             }
                           >
                             {subItem.name}
@@ -97,7 +97,7 @@ function Navbar() {
                   className={({ isActive }) =>
                     `relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-500 ${
                       isActive
-                        ? "after:w-full text-blue-800"
+                        ? "after:w-full font-bold"
                         : "after:w-0 hover:after:w-full"
                     }`
                   }
@@ -111,9 +111,9 @@ function Navbar() {
 
         {/* Donate Button */}
         <div>
-          <button className="flex items-center gap-2 bg-blue-500 text-white m-2 p-2 rounded-b-xl hover:bg-blue-700">
+          <button className="flex items-center gap-2 bg-blue-500 text-white m-2 p-2 rounded-b-xl hover:bg-blue-700 transition duration-300">
             <FaHandHoldingHeart />
-            Donate <span className="hidden md:flex">to our cause</span>
+            Donate <span className="hidden md:flex">to our course</span>
             <FaArrowRightLong />
           </button>
         </div>
@@ -121,16 +121,22 @@ function Navbar() {
 
       {/* Mobile Navigation */}
       {isClicked && (
-        <nav className="relative md:hidden flex flex-col h-screen bg-white">
-          <ul className="px-4 py-2 space-y-2 text-black">
+        <nav className="fixed inset-0 bg-white bg-opacity-90 backdrop-blur-md transition-transform transform duration-300 ease-in-out z-50">
+          <div className="flex justify-between items-center p-4 border-b border-gray-300">
+            <h2 className="text-xl font-bold">WAVES</h2>
+            <button onClick={toggleMenu} className="text-2xl">
+              <MdOutlineCloseFullscreen />
+            </button>
+          </div>
+          <ul className="px-4 py-2 space-y-4 text-black">
             {menuItems.map((item) => (
               <li key={item.name} className="space-y-1">
                 {item.dropdown ? (
                   <>
-                    <span className="font-semibold">{item.name}</span>
-                    <ul className="ml-4 space-y-1 bg-blue-300">
+                    <span className="font-semibold text-lg">{item.name}</span>
+                    <ul className="ml-4 space-y-1">
                       {item.dropdown.map((subItem) => (
-                        <li key={subItem.name} className="hover:bg-blue-400">
+                        <li key={subItem.name}>
                           {subItem.path ? (
                             <NavLink
                               to={subItem.path}
@@ -138,7 +144,7 @@ function Navbar() {
                               className={({ isActive }) =>
                                 `relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 ${
                                   isActive
-                                    ? "after:w-full text-blue-500 font-medium"
+                                    ? "after:w-full font-bold"
                                     : "after:w-0 hover:after:w-full"
                                 }`
                               }
@@ -164,7 +170,7 @@ function Navbar() {
                     className={({ isActive }) =>
                       `relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[3px] after:bg-blue-500 after:transition-all after:duration-500 ${
                         isActive
-                          ? "after:w-full text-blue-800"
+                          ? "after:w-full  font-bold"
                           : "after:w-0 hover:after:w-full"
                       }`
                     }
