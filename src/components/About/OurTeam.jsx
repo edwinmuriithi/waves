@@ -115,7 +115,7 @@ const OurTeam = () => {
               src={member.photo}
               alt={member.name}
               onClick={() => setOpenStory(member)}
-              className="w-full h-full object-contain transition-all duration-500 group-hover:brightness-75 cursor-pointer"
+              className="w-full h-full object-fit transition-all duration-500 group-hover:brightness-75 cursor-pointer"
             />
             <div className="absolute bottom-4 left-4 z-10 text-white transition-all duration-500 group-hover:translate-y-10 group-hover:opacity-0 opacity-80">
               <h3 className="text-xl font-bold bg-blue-400 p-1 font-serif">{member.name}</h3>
@@ -163,7 +163,7 @@ const OurTeam = () => {
               <img
                 src={openStory.photo}
                 alt={openStory.name}
-                className="w-40 h-40 object-cover rounded-full shadow-lg mb-4 border-4 border-gray-400"
+                className="w-40 h-40 object-fit rounded-full shadow-lg mb-4 border-4 border-gray-400"
               />
               <h2 className="text-2xl font-bold mb-2">{openStory.name}</h2>
               <p className="italic text-sm mb-4">{openStory.tittle}</p>

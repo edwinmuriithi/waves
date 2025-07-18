@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-blue-300 text-gray-800">
+    <footer className="relative bg-blue-300 text-white">
       {/* Top wave */}
       <div className="-mt-1 overflow-hidden leading-none">
         <svg
@@ -17,12 +17,12 @@ const Footer = () => {
           preserveAspectRatio="none"
         >
           <path
-            className="fill-blue-100"
+            className="fill-blue-600"
             d="M0,160L80,170.7C160,181,320,203,480,197.3C640,192,800,160,960,160C1120,160,1280,192,1360,208L1440,224L1440,0L0,0Z"
           >
             <animate
               attributeName="d"
-              dur="10s"
+              dur="1s"
               repeatCount="indefinite"
               values="
                 M0,160L80,170.7C160,181,320,203,480,197.3C640,192,800,160,960,160C1120,160,1280,192,1360,208L1440,224L1440,0L0,0Z;
@@ -47,7 +47,7 @@ const Footer = () => {
             />
             <button
               type="submit"
-              className="px-6 py-2 bg-blue-700 text-white rounded-full hover:bg-blue-800 transition"
+              className="px-6 py-2 bg-blue-700 text-white rounded-full hover:bg-blue-800 transition hover:scale-105"
             >
               Subscribe
             </button>

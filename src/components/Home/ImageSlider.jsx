@@ -76,14 +76,14 @@ const ImageSlider = () => {
             <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-2xl z-10"></div>
           )}
           <div
-            className={`transition-all duration-500 ease-in-out object-contain p-1 ${
+            className={`transition-all duration-500 ease-in-out object-contain ${
               transitionDirection === "right" ? "slide-right" : "slide-left"
             }`}
           >
             <img
               src={newsData[currentIndex].image}
               alt={`${newsData[currentIndex].title} program preview`}
-              className="w-full h-72 md:h-96 object-cover"
+              className="w-full h-72 md:h-96 object-fit"
               onLoad={() => setLoading(false)}
             />
           </div>
