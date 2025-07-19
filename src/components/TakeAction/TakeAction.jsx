@@ -1,6 +1,71 @@
+import { useState } from "react";
 import { section } from "framer-motion/client";
 
 const TakeAction = () => {
+  const [filter, setFilter] = useState("All");
+
+  const actionItems = [
+    {
+      id: 1,
+      title: "Take Action for Plastic Free July",
+      category: "Plastic",
+      image:
+        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/SeaLion-DylanDehaas-Advocacy-ActionAlert-1200x1800.png?v=1750080473000",
+      description:
+        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
+    },
+    {
+      id: 2,
+      title: "Take Action for Plastic Free July",
+      category: "Plastic",
+      image:
+        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/Alert_122x1800_OceanImageBank_GrantThomas.jpg?v=1746032961000",
+      description:
+        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
+    },
+    {
+      id: 3,
+      title: "Take Action for Plastic Free July",
+      category: "Plastic",
+      image:
+        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OceanImageBank_LewisBurnett_08.jpg?v=1722543579000",
+      description:
+        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
+    },
+    {
+      id: 4,
+      title: "Take Action for Plastic Free July",
+      category: "Plastic",
+      image:
+        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/HawaiianGreenSeaTurtle-ShaneMyers-Shutterstock-Advocacy-ActionAlert-1200x1800.jpg?v=1712682436000",
+      description:
+        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
+    },
+    {
+      id: 5,
+      title: "Take Action for Plastic Free July",
+      category: "Plastic",
+      image:
+        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OceanImageBank_TomVierus_03.jpg?v=1731093444000",
+      description:
+        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
+    },
+    {
+      id: 6,
+      title: "Take Action for Plastic Free July",
+      category: "Plastic",
+      image:
+        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/DeepwaterHorizon-USNavy-MassCommunicationSpecialistSecondClassJustin-Stumberg-Released-Advocacy-ActionAlert-1200x1800.jpg?v=1697736076000",
+      description:
+        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
+    },
+  ];
+
+  const filteredItems =
+    filter === "All"
+      ? actionItems
+      : actionItems.filter((item) => item.category === filter);
+
   return (
     <section className="bg-gray-50">
       {/* Main Title */}
@@ -10,6 +75,50 @@ const TakeAction = () => {
       <h3 className="text-center text-xl font-bold text-blue-900 my-4">
         Join the movement to protect our ocean
       </h3>
+
+      {/* Filter Buttons */}
+      <div className="flex justify-center space-x-4 mb-4">
+        <button
+          onClick={() => setFilter("All")}
+          className={`py-2 px-4 rounded-md ${
+            filter === "All"
+              ? "bg-blue-900 text-white"
+              : "bg-gray-200 text-blue-900"
+          }`}
+        >
+          All
+        </button>
+        <button
+          onClick={() => setFilter("Plastic")}
+          className={`py-2 px-4 rounded-md ${
+            filter === "Plastic"
+              ? "bg-blue-900 text-white"
+              : "bg-gray-200 text-blue-900"
+          }`}
+        >
+          Plastic
+        </button>
+        <button
+          onClick={() => setFilter("Biodiversity")}
+          className={`py-2 px-4 rounded-md ${
+            filter === "Biodiversity"
+              ? "bg-blue-900 text-white"
+              : "bg-gray-200 text-blue-900"
+          }`}
+        >
+          Biodiversity
+        </button>
+        <button
+          onClick={() => setFilter("Climate")}
+          className={`py-2 px-4 rounded-md ${
+            filter === "Climate"
+              ? "bg-blue-900 text-white"
+              : "bg-gray-200 text-blue-900"
+          }`}
+        >
+          Climate
+        </button>
+      </div>
 
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row gap-8 p-5 md:p-10 items-center w-full max-w-7xl mx-auto">
@@ -40,7 +149,7 @@ const TakeAction = () => {
         <select
           className="appearance-none border-0 rounded-xl px-6 py-4 bg-blue-200 w-full h-16 text-blue-900 font-bold text-lg"
           defaultValue=""
-          onChange={(e) => console.log("Selected:", e.target.value)}
+          onChange={(e) => setFilter(e.target.value)}
         >
           <option value="" disabled>
             Filter
@@ -56,149 +165,28 @@ const TakeAction = () => {
 
       {/* Action Items Section */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-5 py-5 lg:px-10 w-full max-w-7xl mx-auto">
-        {/* First Card */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
-          <img
-            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/SeaLion-DylanDehaas-Advocacy-ActionAlert-1200x1800.png?v=1750080473000"
-            alt="Sea lion swimming underwater highlighting marine conservation needs"
-            className="w-full h-48 sm:h-56 object-cover"
-          />
-          <div className="p-6 space-y-4">
-            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
-              Plastic
-            </span>
-            <h3 className="text-xl font-bold text-blue-900">
-              Take Action for Plastic Free July
-            </h3>
-            <p className="text-gray-600">
-              Call on Congress to phase out harmful, wasteful single-use plastic
-              products.
-            </p>
-            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
-              Take Action
-            </button>
+        {filteredItems.map((item) => (
+          <div
+            key={item.id}
+            className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all"
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+              className="w-full h-48 sm:h-56 object-cover"
+            />
+            <div className="p-6 space-y-4">
+              <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
+                {item.category}
+              </span>
+              <h3 className="text-xl font-bold text-blue-900">{item.title}</h3>
+              <p className="text-gray-600">{item.description}</p>
+              <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
+                Take Action
+              </button>
+            </div>
           </div>
-        </div>
-
-        {/* Second Card */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
-          <img
-            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/Alert_122x1800_OceanImageBank_GrantThomas.jpg?v=1746032961000"
-            alt="Underwater coral reef ecosystem demonstrating biodiversity"
-            className="w-full h-48 sm:h-56 object-cover"
-          />
-          <div className="p-6 space-y-4">
-            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
-              Plastic
-            </span>
-            <h3 className="text-xl font-bold text-blue-900">
-              Take Action for Plastic Free July
-            </h3>
-            <p className="text-gray-600">
-              Call on Congress to phase out harmful, wasteful single-use plastic
-              products.
-            </p>
-            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
-              Take Action
-            </button>
-          </div>
-        </div>
-
-        {/* Third Card */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
-          <img
-            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OceanImageBank_LewisBurnett_08.jpg?v=1722543579000"
-            alt="Ocean wave crashing showing the power of marine environments"
-            className="w-full h-48 sm:h-56 object-cover"
-          />
-          <div className="p-6 space-y-4">
-            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
-              Plastic
-            </span>
-            <h3 className="text-xl font-bold text-blue-900">
-              Take Action for Plastic Free July
-            </h3>
-            <p className="text-gray-600">
-              Call on Congress to phase out harmful, wasteful single-use plastic
-              products.
-            </p>
-            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
-              Take Action
-            </button>
-          </div>
-        </div>
-
-        {/* Fourth Card */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
-          <img
-            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/HawaiianGreenSeaTurtle-ShaneMyers-Shutterstock-Advocacy-ActionAlert-1200x1800.jpg?v=1712682436000"
-            alt="Sea turtle swimming gracefully in blue ocean waters"
-            className="w-full h-48 sm:h-56 object-cover"
-          />
-          <div className="p-6 space-y-4">
-            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
-              Plastic
-            </span>
-            <h3 className="text-xl font-bold text-blue-900">
-              Take Action for Plastic Free July
-            </h3>
-            <p className="text-gray-600">
-              Call on Congress to phase out harmful, wasteful single-use plastic
-              products.
-            </p>
-            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
-              Take Action
-            </button>
-          </div>
-        </div>
-
-        {/* Fifth Card */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
-          <img
-            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OceanImageBank_TomVierus_03.jpg?v=1731093444000"
-            alt="Colorful underwater marine life in coral reef ecosystem"
-            className="w-full h-48 sm:h-56 object-cover"
-          />
-          <div className="p-6 space-y-4">
-            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
-              Plastic
-            </span>
-            <h3 className="text-xl font-bold text-blue-900">
-              Take Action for Plastic Free July
-            </h3>
-            <p className="text-gray-600">
-              Call on Congress to phase out harmful, wasteful single-use plastic
-              products.
-            </p>
-            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
-              Take Action
-            </button>
-          </div>
-        </div>
-
-        {/* Sixth Card */}
-        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
-          <img
-            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/DeepwaterHorizon-USNavy-MassCommunicationSpecialistSecondClassJustin-Stumberg-Released-Advocacy-ActionAlert-1200x1800.jpg?v=1697736076000"
-            alt="Environmental disaster showing oil spill impact on marine life"
-            className="w-full h-48 sm:h-56 object-cover"
-          />
-          <div className="p-6 space-y-4">
-            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
-              Plastic
-            </span>
-            <h3 className="text-xl font-bold text-blue-900">
-              Take Action for Plastic Free July
-            </h3>
-            <p className="text-gray-600">
-              Call on Congress to phase out harmful, wasteful single-use plastic
-              products.
-            </p>
-            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
-              Take Action
-            </button>
-          </div>
-        </div>
+        ))}
       </div>
 
       {/* Highlight Section */}
