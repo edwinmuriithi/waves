@@ -2,265 +2,233 @@ import { section } from "framer-motion/client";
 
 const TakeAction = () => {
   return (
-    <section>
-      <div className="flex gap-16 p-10 items-center">
+    <section className="bg-gray-50">
+      {/* Main Title */}
+      <h1 className="text-center text-4xl font-bold text-blue-900 my-8">
+        Take Action!
+      </h1>
+      <h3 className="text-center text-xl font-bold text-blue-900 my-4">
+        Join the movement to protect our ocean
+      </h3>
+
+      {/* Hero Section */}
+      <div className="flex flex-col lg:flex-row gap-8 p-5 md:p-10 items-center w-full max-w-7xl mx-auto">
         <img
           src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/Crab-WaterBottle-PierNirandara-Advocacy-ActionAlert-1200x1800.png?v=1751045521000"
-          alt="Crab in Water Bottle"
-          style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-          className="hover:scale-95"
+          alt="Crab trapped in plastic water bottle showcasing ocean pollution"
+          className="w-full lg:w-1/2 h-auto object-cover rounded-xl shadow-md hover:shadow-lg transition-all"
         />
-        <div className="flex flex-col gap-7 hover:scale-105">
-          <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-          <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-          <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-          <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
+        <div className="flex flex-col gap-6 w-full lg:w-1/2 p-0 lg:p-4">
+          <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md w-fit hover:bg-gray-600 transition">
+            Plastic
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900">
+            Take Action for Plastic Free July
+          </h2>
+          <p className="text-gray-700 text-lg">
+            Call on Congress to phase out harmful, wasteful single-use plastic
+            products.
+          </p>
+          <button className="bg-blue-900 hover:bg-blue-800 text-white text-lg font-bold py-3 px-6 rounded-xl w-fit transition-all hover:shadow-md">
+            Take Action
+          </button>
         </div>
       </div>
-      <div className="flex mr-6 ml-6 justify-center">
 
-      <div className="flex flex-col gap-4 p-6 items-center">
-        <img
-          src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/SeaLion-DylanDehaas-Advocacy-ActionAlert-1200x1800.png?v=1750080473000"
-          alt="Crab in Water Bottle"
-          style={{ width: '350px', height: '250px', objectFit: 'cover', borderRadius: '15px' }}
-          className=""
-        />
-        <div className="flex flex-col gap-4">
-          <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-          <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-          <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-          <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
+      {/* Filter */}
+      <div className="relative w-11/12 md:w-2/3 lg:w-1/2 mx-auto my-8">
+        <select
+          className="appearance-none border-0 rounded-xl px-6 py-4 bg-blue-200 w-full h-16 text-blue-900 font-bold text-lg"
+          defaultValue=""
+          onChange={(e) => console.log("Selected:", e.target.value)}
+        >
+          <option value="" disabled>
+            Filter
+          </option>
+          <option value="Biodiversity">Biodiversity</option>
+          <option value="Climate">Climate</option>
+          <option value="Plastic">Plastic</option>
+        </select>
+        <div className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-blue-900">
+          ▼
+        </div>
+      </div>
+
+      {/* Action Items Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-5 py-5 lg:px-10 w-full max-w-7xl mx-auto">
+        {/* First Card */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+          <img
+            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/SeaLion-DylanDehaas-Advocacy-ActionAlert-1200x1800.png?v=1750080473000"
+            alt="Sea lion swimming underwater highlighting marine conservation needs"
+            className="w-full h-48 sm:h-56 object-cover"
+          />
+          <div className="p-6 space-y-4">
+            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
+              Plastic
+            </span>
+            <h3 className="text-xl font-bold text-blue-900">
+              Take Action for Plastic Free July
+            </h3>
+            <p className="text-gray-600">
+              Call on Congress to phase out harmful, wasteful single-use plastic
+              products.
+            </p>
+            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
+              Take Action
+            </button>
+          </div>
         </div>
 
-      </div>  
-
-        <div className="flex flex-col gap-4 p-6  items-center">
+        {/* Second Card */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
           <img
             src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/Alert_122x1800_OceanImageBank_GrantThomas.jpg?v=1746032961000"
-            alt="Crab in Water Bottle"
-            style={{ width: '350px', height: '250px', objectFit: 'cover', borderRadius: '15px' }}
-            className=""
+            alt="Underwater coral reef ecosystem demonstrating biodiversity"
+            className="w-full h-48 sm:h-56 object-cover"
           />
-          <div className="flex  flex-col gap-4">
-            <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-            <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-            <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-            <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
+          <div className="p-6 space-y-4">
+            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
+              Plastic
+            </span>
+            <h3 className="text-xl font-bold text-blue-900">
+              Take Action for Plastic Free July
+            </h3>
+            <p className="text-gray-600">
+              Call on Congress to phase out harmful, wasteful single-use plastic
+              products.
+            </p>
+            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
+              Take Action
+            </button>
           </div>
-        </div>  
+        </div>
 
-        <div className="flex flex-col gap-4 p-6  items-center">
-            <img
-              src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OceanImageBank_LewisBurnett_08.jpg?v=1722543579000"
-              alt="Crab in Water Bottle"
-              style={{ width: '350px', height: '250px', objectFit: 'cover', borderRadius: '15px' }}
-              className=""
-            />
-            <div className="flex flex-col gap-4">
-              <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-              <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-              <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-              <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-            </div>
+        {/* Third Card */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+          <img
+            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OceanImageBank_LewisBurnett_08.jpg?v=1722543579000"
+            alt="Ocean wave crashing showing the power of marine environments"
+            className="w-full h-48 sm:h-56 object-cover"
+          />
+          <div className="p-6 space-y-4">
+            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
+              Plastic
+            </span>
+            <h3 className="text-xl font-bold text-blue-900">
+              Take Action for Plastic Free July
+            </h3>
+            <p className="text-gray-600">
+              Call on Congress to phase out harmful, wasteful single-use plastic
+              products.
+            </p>
+            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
+              Take Action
+            </button>
           </div>
+        </div>
+
+        {/* Fourth Card */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+          <img
+            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/HawaiianGreenSeaTurtle-ShaneMyers-Shutterstock-Advocacy-ActionAlert-1200x1800.jpg?v=1712682436000"
+            alt="Sea turtle swimming gracefully in blue ocean waters"
+            className="w-full h-48 sm:h-56 object-cover"
+          />
+          <div className="p-6 space-y-4">
+            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
+              Plastic
+            </span>
+            <h3 className="text-xl font-bold text-blue-900">
+              Take Action for Plastic Free July
+            </h3>
+            <p className="text-gray-600">
+              Call on Congress to phase out harmful, wasteful single-use plastic
+              products.
+            </p>
+            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
+              Take Action
+            </button>
           </div>
-              <div className="relative w-[90%] mx-auto font-bold text-3xl text-blue-900">
-                <select
-                  className="appearance-none border-none rounded-2xl px-4 py-4 bg-blue-200 w-full h-16 m-8 pr-10 text-gray-700"
-                  defaultValue=""
-                  onChange={(e) => console.log("Selected:", e.target.value)}
-                >
-                  <option value="" disabled className="font-bold text-3xl text-blue-900">
-                    Filter
-                  </option>
-                  <option value="Biodiversity">Biodiversity</option>
-                  <option value="Climate">Climate</option>
-                  <option value="Plastic">Plastic</option>
-                </select>
+        </div>
 
-                {/* Custom dropdown icon */}
-                <div className="pointer-events-none absolute top-12 right-2 text-gray-500">
-                  ▼
-                </div>
-              </div>
-              <section>
-                  <div className="flex gap-16 p-10 items-center">
-                    <img
-                     src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/Crab-WaterBottle-PierNirandara-Advocacy-ActionAlert-1200x1800.png?v=1751045521000"
+        {/* Fifth Card */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+          <img
+            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OceanImageBank_TomVierus_03.jpg?v=1731093444000"
+            alt="Colorful underwater marine life in coral reef ecosystem"
+            className="w-full h-48 sm:h-56 object-cover"
+          />
+          <div className="p-6 space-y-4">
+            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
+              Plastic
+            </span>
+            <h3 className="text-xl font-bold text-blue-900">
+              Take Action for Plastic Free July
+            </h3>
+            <p className="text-gray-600">
+              Call on Congress to phase out harmful, wasteful single-use plastic
+              products.
+            </p>
+            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
+              Take Action
+            </button>
+          </div>
+        </div>
 
-                      alt="Crab in Water Bottle"
-                      style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-                      className="hover:scale-95"
-                    />
-                    <div className="flex flex-col gap-7 hover:scale-105">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-                      <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-                      <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-                  </div>
-                        <div className="flex gap-16 p-10 items-center">
-                    <img
-                      src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/SeaLion-DylanDehaas-Advocacy-ActionAlert-1200x1800.png?v=1750080473000"
-                      alt="Crab in Water Bottle"
-                      style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-                      className="hover:scale-95"
-                    />
-                    <div className="flex flex-col gap-7 hover:scale-105">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-                      <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-                      <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-                  </div>
-                        <div className="flex gap-16 p-10 items-center">
-                    <img
-                      src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/Alert_122x1800_OceanImageBank_GrantThomas.jpg?v=1746032961000"
-                      alt="Crab in Water Bottle"
-                      style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-                      className="hover:scale-95"
-                    />
-                    <div className="flex flex-col gap-7 hover:scale-105">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-                      <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-                      <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-                  </div>
-                        <div className="flex gap-16 p-10 items-center">
-                    <img
-                      src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OceanImageBank_LewisBurnett_08.jpg?v=1722543579000"
-                      alt="Crab in Water Bottle"
-                      style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-                      className="hover:scale-95"
-                    />
-                    <div className="flex flex-col gap-7 hover:scale-105">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-                      <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-                      <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-                  </div>
-                        <div className="flex gap-16 p-10 items-center">
-                    <img
-                      src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/HawaiianGreenSeaTurtle-ShaneMyers-Shutterstock-Advocacy-ActionAlert-1200x1800.jpg?v=1712682436000"
-                      alt="Crab in Water Bottle"
-                      style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-                      className="hover:scale-95"
-                    />
-                    <div className="flex flex-col gap-7 hover:scale-105">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-                      <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-                      <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-                  </div>
-                        <div className="flex gap-16 p-10 items-center">
-                    <img
-                      src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OceanImageBank_TomVierus_03.jpg?v=1731093444000"
-                      alt="Crab in Water Bottle"
-                      style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-                      className="hover:scale-95"
-                    />
-                    <div className="flex flex-col gap-7 hover:scale-105">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-                      <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-                      <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-                  </div>
-                        <div className="flex gap-16 p-10 items-center">
-                    <img
-                      src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/DeepwaterHorizon-USNavy-MassCommunicationSpecialistSecondClassJustin-Stumberg-Released-Advocacy-ActionAlert-1200x1800.jpg?v=1697736076000"
-                      alt="Crab in Water Bottle"
-                      style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-                      className="hover:scale-95"
-                    />
-                    <div className="flex flex-col gap-7 hover:scale-105">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-                      <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-                      <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-                  </div>
-                        <div className="flex gap-16 p-10 items-center">
-                    <img
-                      src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/HelpOutKelp_Advocacy_ActionAlert_12001800_OceanImageBank_HannesKlostermann.jpg?v=1743534531000"
-                      alt="Crab in Water Bottle"
-                      style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-                      className="hover:scale-95"
-                    />
-                    <div className="flex flex-col gap-7 hover:scale-105">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-                      <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-                      <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-                  </div>
-                        <div className="flex gap-16 p-10 items-center">
-                    <img
-                      src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/Nick+Chill_flickr_Foam-2.jpg?v=1726178047000"
-                      alt="Crab in Water Bottle"
-                      style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-                      className="hover:scale-95"
-                    />
-                    <div className="flex flex-col gap-7 hover:scale-105">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-                      <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-                      <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-                  </div>
-                        <div className="flex gap-16 p-10 items-center">
-                    <img
-                      src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OilDrums_OceanImageBank_JillHeinerth_v2.jpg?v=1742230581000"
-                      alt="Crab in Water Bottle"
-                      style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-                      className="hover:scale-95"
-                    />
-                    <div className="flex flex-col gap-7 hover:scale-105">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-                      <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-                      <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-                  </div>
-                        <div className="flex gap-16 p-10 items-center">
-                    <img
-                      src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/Alert_Paris_Advocacy_Credit_NOAA_PIFSC_HMSRP.jpg?v=1740682043000"
-                      alt="Crab in Water Bottle"
-                      style={{ width: '500px', height: '450px', objectFit: 'cover', borderRadius: '15px' }}
-                      className="hover:scale-95"
-                    />
-                    <div className="flex flex-col gap-7 hover:scale-105">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 text-4xl hover:underline hover:decoration-green-700">Take Action for Plastic Free <br /> July</h1>
-                      <p>Call on Congress to phase out harmful, wasteful single- <br />use plastic products. </p>
-                      <button className="bg-amber-500 hover:bg-blue-900 text-2xl font-bold w-fit text-gray-700 hover:text-gray-200 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-                  </div>
-              </section>
-              <section className="flex gap-4 bg-amber-800">
-                <div>
-                   <img
-                      src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/HawaiianGreenSeaTurtle-ShaneMyers-Shutterstock-Advocacy-ActionAlert-1200x1800.jpg?v=1712682436000"
-                      alt="Crab in Water Bottle"
-                      style={{ width: '650px', height: '500px', objectFit: 'cover'}}
-                      className=""
-                    />
-                </div>
-                    <div className="flex flex-col gap-7 justify-center m-8 ">
-                      <span className="bg-gray-700 text-white font-serif font-bold font-stretch-50% p-1 pr-2 pl-2 w-fit rounded hover:scale-105">Plastic</span>
-                      <h1 className="font-bold font-serif font-stretch-75% text-blue-900 bg-amber-600 text-4xl hover:underline hover:decoration-green-700">Safeguard the <br /> Endangered Species <br /> Act</h1>
-                      <p className="">Call on your elected officials to protect the <br />Endangered Species Act and safeguard <br /> endangered and threatened animals and their <br /> habitats before it’s too late.</p>
-                      <button className="bg-blue-900 hover:bg-blue-800 text-2xl font-bold w-fit text-gray-200 hover:text-gray-300 pr-3 pl-3 rounded-2xl p-2">Take Action</button>
-                    </div>
-              </section>
+        {/* Sixth Card */}
+        <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+          <img
+            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/DeepwaterHorizon-USNavy-MassCommunicationSpecialistSecondClassJustin-Stumberg-Released-Advocacy-ActionAlert-1200x1800.jpg?v=1697736076000"
+            alt="Environmental disaster showing oil spill impact on marine life"
+            className="w-full h-48 sm:h-56 object-cover"
+          />
+          <div className="p-6 space-y-4">
+            <span className="bg-gray-700 text-white font-bold py-1 px-3 rounded-md hover:bg-gray-600 transition">
+              Plastic
+            </span>
+            <h3 className="text-xl font-bold text-blue-900">
+              Take Action for Plastic Free July
+            </h3>
+            <p className="text-gray-600">
+              Call on Congress to phase out harmful, wasteful single-use plastic
+              products.
+            </p>
+            <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
+              Take Action
+            </button>
+          </div>
+        </div>
+      </div>
 
-
+      {/* Highlight Section */}
+      <div className="flex flex-col lg:flex-row gap-8 bg-blue-800 rounded-xl overflow-hidden shadow-xl my-10 w-full max-w-7xl mx-auto">
+        <div className="lg:w-1/2">
+          <img
+            src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/HawaiianGreenSeaTurtle-ShaneMyers-Shutterstock-Advocacy-ActionAlert-1200x1800.jpg?v=1712682436000"
+            alt="Endangered Hawaiian Green Sea Turtle swimming in pristine tropical waters"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="lg:w-1/2 p-8 md:p-12 text-white flex flex-col justify-center space-y-6">
+          <span className="bg-gray-200 text-blue-900 font-bold py-1 px-3 rounded-md w-fit hover:bg-gray-300 transition">
+            Biodiversity
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold">
+            Safeguard the Endangered Species Act
+          </h2>
+          <p className="text-blue-100 text-lg">
+            Call on your elected officials to protect the Endangered Species Act
+            and safeguard endangered and threatened animals and their habitats
+            before it's too late.
+          </p>
+          <button className="bg-white hover:bg-gray-100 text-blue-900 text-lg font-bold py-3 px-6 rounded-xl w-fit transition-all hover:shadow-md">
+            Take Action
+          </button>
+        </div>
+      </div>
     </section>
-  )
+  );
 };
 
 export default TakeAction;
