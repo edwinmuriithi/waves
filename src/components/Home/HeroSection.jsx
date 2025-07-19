@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import marine1 from "../../assets/ocean1.jpg";
 import marine2 from "../../assets/ocean2.jpg";
 import marine3 from "../../assets/ocean3.jpg";
 import marine4 from "../../assets/ocean4.jpg";
 import marine5 from "../../assets/ocean5.jpg";
 import marine6 from "../../assets/ocean6.jpg";
+import Button from "../shared/Button";
+import { HeartIcon } from "@heroicons/react/24/outline";
 
 const items = [
   {
@@ -57,15 +58,19 @@ export default function HeroSection() {
 
   return (
     <div style={{ position: "relative", height: "400px" }}>
-      <Link
-        to="/"
-        className="absolute bottom-0 left-0 p-5 backdrop-blur-3xl z-50"
-      >
-        <div className="text-white font-sans font-bold text-start">
-          <h1 className="text-5xl underline mb-3 font-bold">Give Today</h1>
-          <p>We couldn't do our ocean conservation work without you</p>
-        </div>
-      </Link>
+      <div className="text-white absolute bottom-5 z-50">
+        <Button
+          onClick={() => (window.location.href = "#donate")}
+          className="rounded-b-full md:rounded-b-lg flex flex-col p-3"
+          size={"lg"}
+        >
+          {" "}
+          <span className="text-xs md:text-lg ">
+            We couldn't do our ocean conservation work without you
+          </span>
+          <span className="hover:underline font-bold">Give Today &rarr;</span>
+        </Button>
+      </div>
       {items.map((item, i) => (
         <div
           key={i}
