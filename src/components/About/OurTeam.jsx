@@ -115,7 +115,7 @@ const OurTeam = () => {
               src={member.photo}
               alt={member.name}
               onClick={() => setOpenStory(member)}
-              className="w-full h-full object-fit transition-all duration-500 group-hover:brightness-75 cursor-pointer"
+              className="w-full h-full object-fit transition-all duration-500 group-hover:brightness-75 cursor-pointer hover:scale-105"
             />
             <div className="absolute bottom-4 left-4 z-10 text-white transition-all duration-500 group-hover:translate-y-10 group-hover:opacity-0 opacity-80">
               <h3 className="text-xl font-bold bg-blue-400 p-1 font-serif">{member.name}</h3>
@@ -151,7 +151,7 @@ const OurTeam = () => {
 
       {/* Fullscreen Story Overlay */}
       {openStory && (
-        <div className="fixed inset-0 bg-black bg-opacity-40 z-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-transparent opacity-100 z-50 flex items-center justify-center">
           <div className="bg-white w-[85%] max-w-5xl max-h-[calc(100%-80px)] my-10 overflow-y-auto rounded-lg shadow-2xl px-8 py-6 relative">
             <button
               onClick={() => setOpenStory(null)}
