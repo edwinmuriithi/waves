@@ -1,65 +1,8 @@
 import { useState } from "react";
-import { section } from "framer-motion/client";
+import { actionItems } from "./actions";
 
 const TakeAction = () => {
   const [filter, setFilter] = useState("All");
-
-  const actionItems = [
-    {
-      id: 1,
-      title: "Take Action for Plastic Free July",
-      category: "Plastic",
-      image:
-        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/SeaLion-DylanDehaas-Advocacy-ActionAlert-1200x1800.png?v=1750080473000",
-      description:
-        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
-    },
-    {
-      id: 2,
-      title: "Take Action for Plastic Free July",
-      category: "Plastic",
-      image:
-        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/Alert_122x1800_OceanImageBank_GrantThomas.jpg?v=1746032961000",
-      description:
-        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
-    },
-    {
-      id: 3,
-      title: "Take Action for Plastic Free July",
-      category: "Plastic",
-      image:
-        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OceanImageBank_LewisBurnett_08.jpg?v=1722543579000",
-      description:
-        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
-    },
-    {
-      id: 4,
-      title: "Take Action for Plastic Free July",
-      category: "Plastic",
-      image:
-        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/HawaiianGreenSeaTurtle-ShaneMyers-Shutterstock-Advocacy-ActionAlert-1200x1800.jpg?v=1712682436000",
-      description:
-        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
-    },
-    {
-      id: 5,
-      title: "Take Action for Plastic Free July",
-      category: "Plastic",
-      image:
-        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/OceanImageBank_TomVierus_03.jpg?v=1731093444000",
-      description:
-        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
-    },
-    {
-      id: 6,
-      title: "Take Action for Plastic Free July",
-      category: "Plastic",
-      image:
-        "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1991/DeepwaterHorizon-USNavy-MassCommunicationSpecialistSecondClassJustin-Stumberg-Released-Advocacy-ActionAlert-1200x1800.jpg?v=1697736076000",
-      description:
-        "Call on Congress to phase out harmful, wasteful single-use plastic products.",
-    },
-  ];
 
   const filteredItems =
     filter === "All"
@@ -181,7 +124,7 @@ const TakeAction = () => {
               </span>
               <h3 className="text-xl font-bold text-blue-900">{item.title}</h3>
               <p className="text-gray-600">{item.description}</p>
-              <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg transition-all">
+              <button className="bg-blue-600 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded-lg transition-all">
                 Take Action
               </button>
             </div>
@@ -210,7 +153,7 @@ const TakeAction = () => {
             and safeguard endangered and threatened animals and their habitats
             before it's too late.
           </p>
-          <button className="bg-white hover:bg-gray-100 text-blue-900 text-lg font-bold py-3 px-6 rounded-xl w-fit transition-all hover:shadow-md">
+          <button className="bg-white hover:bg-blue-500 text-blue-900 text-lg font-bold py-3 px-6 rounded-xl w-fit transition-all hover:shadow-md">
             Take Action
           </button>
         </div>

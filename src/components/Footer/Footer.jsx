@@ -8,8 +8,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-blue-300 text-white">
-      {/* Top wave */}
+    <>
       <div className="-mt-1 overflow-hidden leading-none">
         <svg
           className="w-full h-24 rotate-180"
@@ -25,81 +24,80 @@ const Footer = () => {
               dur="1s"
               repeatCount="indefinite"
               values="
-                M0,160L80,170.7C160,181,320,203,480,197.3C640,192,800,160,960,160C1120,160,1280,192,1360,208L1440,224L1440,0L0,0Z;
-                M0,180L100,160C200,140,300,190,400,210C500,230,600,200,700,190C800,180,900,200,1000,210C1100,220,1200,200,1300,190L1440,180L1440,0L0,0Z;
-                M0,160L80,170.7C160,181,320,203,480,197.3C640,192,800,160,960,160C1120,160,1280,192,1360,208L1440,224L1440,0L0,0Z"
+            M0,160L80,170.7C160,181,320,203,480,197.3C640,192,800,160,960,160C1120,160,1280,192,1360,208L1440,224L1440,0L0,0Z;
+            M0,180L100,160C200,140,300,190,400,210C500,230,600,200,700,190C800,180,900,200,1000,210C1100,220,1200,200,1300,190L1440,180L1440,0L0,0Z;
+            M0,160L80,170.7C160,181,320,203,480,197.3C640,192,800,160,960,160C1120,160,1280,192,1360,208L1440,224L1440,0L0,0Z"
             />
           </path>
         </svg>
       </div>
+      <footer className="relative bg-gradient-to-r from-blue-100 via-blue-400 to-blue-900 text-gray-900">
+        <div className="flex flex-col md:flex-row items-center justify-between px-6 py-8 space-y-6 md:space-y-0">
+          <p className=" leading-6 uppercase text-gray-950">
+            &copy; {new Date().getFullYear()} Wildlife Advocates for Vital
+            Ecosystems and Species
+          </p>
 
-      {/* Footer content */}
-      <div className="flex flex-col items-center px-6 py-8 space-y-6">
-        {/* Newsletter Signup */}
-        <div className="w-full max-w-md text-center">
-          <h3 className="text-xl font-semibold mb-2">Subscribe to our newsletter</h3>
-          <p className="text-sm mb-4">Get updates on conservation efforts and legal action.</p>
-          <form className="flex flex-col sm:flex-row items-center gap-3">
-            <input
-              type="email"
-              placeholder="Your email"
-              className="w-full flex-1 px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-700"
-            />
-            <button
-              type="submit"
-              className="px-6 py-2 bg-blue-700 text-white rounded-full hover:bg-blue-800 transition hover:scale-105"
+          <div className="flex flex-col text-center">
+            <p className="text-sm mb-4">
+              Get updates on conservation efforts and legal action.
+            </p>
+            <form className="flex flex-col sm:flex-row items-center gap-3">
+              <input
+                type="email"
+                placeholder="Subscribe to our newsletter"
+                className="w-full flex-1 px-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-700"
+              />
+              <button
+                type="submit"
+                className="px-6 py-2 bg-blue-700 text-white rounded-full hover:bg-blue-800 transition hover:scale-105"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+
+          <div className="flex flex-wrap justify-center space-x-5 text-2xl">
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
             >
-              Subscribe
-            </button>
-          </form>
+              <FaFacebookSquare />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <FaSquareXTwitter />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.2 }}
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <FaInstagramSquare />
+            </motion.a>
+          </div>
         </div>
-
-        {/* Social Links */}
-        <div className="flex space-x-5 text-2xl">
-          <motion.a
-            whileHover={{ scale: 1.2 }}
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          >
-            <FaFacebookSquare />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.2 }}
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.2 }}
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-          >
-            <FaSquareXTwitter />
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.2 }}
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <FaInstagramSquare />
-          </motion.a>
-        </div>
-
-        {/* Copyright */}
-        <p className="text-sm text-center">
-          &copy; {new Date().getFullYear()} Waves. All rights reserved.
-        </p>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 
