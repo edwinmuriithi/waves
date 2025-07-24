@@ -9,19 +9,19 @@ const AboutUs = () => {
           Wildlife Advocates for Vital Ecosystems and Species (WAVES)
         </h1>
         <p className="text-lg md:text-xl text-center max-w-3xl mx-auto mb-12">
+          <strong>
+            WAVES
+          </strong>
+          is a coalition of legal experts, conservationists, researchers, and
+          community advocates working to end illegal shark finning and protect
+          our oceans. Through strategic litigation, policy reform, grassroots
+          education, and investigations, we are closing enforcement gaps,
+          empowering communities, and restoring ecological balance.
           We are an open and dynamic partnership committed to protecting Kenya’s endangered marine species and their ecosystems.
           Together, we are united by a shared vision: oceans where marine wildlife thrives, laws are enforced, and communities are at the heart of conservation.
         </p>
 
         {/* Marine Habitat Illustration */}
-        <div className="flex justify-center mb-8">
-          <img
-            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=200&q=80"
-            alt="Ocean illustration"
-            className="w-32 h-32 object-cover rounded-full shadow-lg"
-          />
-        </div>
-
 
         {/* Mission Section */}
         <div className="bg-white shadow-lg rounded-2xl p-6 md:p-10 mb-12">

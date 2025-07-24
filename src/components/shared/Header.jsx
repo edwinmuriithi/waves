@@ -8,12 +8,11 @@ const navigation = [
   { name: 'Home', href: '/', withLinks: false },
   {
     name: 'About Us',
-    href: '/about',
+    
     withLinks: true,
     links: [
       { name: 'Our Programs', href: '/our-programs' },
       { name: 'Our Approach', href: '/our-approach' },
-      { name: 'Our Team', href: '/our-team' },
     ],
   },
   { name: 'Take Action', href: '/take-action', withLinks: false },
