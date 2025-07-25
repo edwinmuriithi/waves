@@ -1,5 +1,4 @@
 import HeroSection from "./HeroSection";
-import ImageSlider from "./ImageSlider";
 import { actionItems } from "../TakeAction/actions";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -26,14 +25,6 @@ function HomePage() {
       {/* About Section */}
       <section>
         <AboutUs />
-      </section>
-
-      {/* Programs Section (Slider) */}
-      <section className="max-w-7xl mx-auto px-4 py-12 text-center">
-        <h1 className="text-center text-3xl font-semibold mb-6 border-b-4 border-blue-200 inline-block">
-          Meet Our Team
-        </h1>
-        <ImageSlider />
       </section>
 
       {/* Join the Movement Section */}
