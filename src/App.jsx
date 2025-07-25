@@ -1,5 +1,4 @@
 import HomePage from "./components/Home/HomePage";
-import Navbar from "./components/Header/Navbar";
 import Footer from "./components/Footer/Footer";
 import AboutUs from "./components/About/AboutUs";
 import OurPrograms from "./components/Programs/OurPrograms";
@@ -10,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OurApproach from "./components/About/OurApproach";
 import OurTeam from "./components/About/OurTeam";
 import TakeAction from "./components/TakeAction/TakeAction";
+import Navbar from "./components/Header/Header";
 
 const App = () => {
   return (

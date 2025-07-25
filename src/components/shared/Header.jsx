@@ -1,29 +1,28 @@
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, HeartIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import Button from './Button'
-import { Link, useLocation } from 'react-router-dom'
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import { Bars3Icon, HeartIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Button from "./Button";
+import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
-  { name: 'Home', href: '/', withLinks: false },
+  { name: "Home", href: "/", withLinks: false },
   {
-    name: 'About Us',
-    href: '/about',
+    name: "About",
+
     withLinks: true,
     links: [
-      { name: 'Our Programs', href: '/our-programs' },
-      { name: 'Our Approach', href: '/our-approach' },
-      { name: 'Our Team', href: '/our-team' },
+      { name: "Our Programs", href: "/our-programs" },
+      { name: "Our Approach", href: "/our-approach" },
     ],
   },
-  { name: 'Take Action', href: '/take-action', withLinks: false },
-  { name: 'Get Involved', href: '/get-involved', withLinks: false },
-  { name: 'Contact Us', href: '/contact', withLinks: false },
-]
+  { name: "Take Action", href: "/take-action", withLinks: false },
+  { name: "Get Involved", href: "/get-involved", withLinks: false },
+  { name: "Contact Us", href: "/contact", withLinks: false },
+];
 
 export default function PageHeader() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const router = useLocation().pathname
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useLocation().pathname;
 
   return (
     <header className="inset-x-0 top-0 z-50 border-b border-blue-200 sticky bg-white">
@@ -36,7 +35,7 @@ export default function PageHeader() {
           <p className="font-semibold hidden md:block leading-6 uppercase text-gray-950">
             Wildlife Advocates for Vital Ecosystems and Species
           </p>
-          <p className="font-semibold md:hidden leading-6 uppercase text-gray-950">
+          <p className=" font-semibold md:hidden leading-6 uppercase text-gray-950">
             WAVES
           </p>
         </Link>
@@ -61,8 +60,8 @@ export default function PageHeader() {
                 aria-label={item.name}
                 className={`leading-6 ${
                   router === item.href
-                    ? 'text-blue-400 underline'
-                    : 'text-gray-950'
+                    ? "text-blue-400 underline"
+                    : "text-gray-950"
                 } text-light font-light hover:text-blue-600`}
               >
                 {item.name}
@@ -88,9 +87,9 @@ export default function PageHeader() {
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-x-3">
           <Button
-            onClick={() => (window.location.href = '#donate')}
+            onClick={() => (window.location.href = "#donate")}
             className="rounded-full"
-            size={'lg'}
+            size={"lg"}
           >
             <HeartIcon className="h-5 w-5 text-white mr-2" />
             Donate to our cause &rarr;
@@ -163,5 +162,5 @@ export default function PageHeader() {
         </Dialog.Panel>
       </Dialog>
     </header>
-  )
+  );
 }

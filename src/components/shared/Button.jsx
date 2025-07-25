@@ -2,7 +2,7 @@ import React from "react";
 import { cn } from "../../lib/utils";
 
 const variants = {
-  default: "bg-blue-600 text-white hover:bg-blue-700",
+  default: "bg-blue-600 text-white hover:bg-orange-500",
   outline: "border border-gray-300 bg-white text-gray-800 hover:bg-gray-100",
   ghost: "bg-transparent hover:bg-gray-100 text-gray-800",
   destructive: "bg-red-600 text-white hover:bg-red-700",
@@ -17,7 +17,17 @@ const sizes = {
 };
 
 const Button = React.forwardRef(
-  ({ className, children, variant = "default", size = "default", type = "button", ...props }, ref) => {
+  (
+    {
+      className,
+      children,
+      variant = "default",
+      size = "default",
+      type = "button",
+      ...props
+    },
+    ref
+  ) => {
     return (
       <button
         type={type}
