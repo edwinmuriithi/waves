@@ -23,9 +23,8 @@ function HomePage() {
     <div className="text-gray-800">
       <HeroSection />
       {/* About Section */}
-      <section>
-        <AboutUs />
-      </section>
+
+      <AboutUs />
 
       {/* Join the Movement Section */}
       <section className="mx-auto px-4 py-12 text-white bg-blue-700">

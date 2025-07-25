@@ -1,9 +1,9 @@
 import Banner from "../shared/Banner";
 import PageHeader from "../shared/Header";
 
-function Navbar() {
+const Navbar = () => {
   return (
-    <div>
+    <div className="absolute top-0 z-50 w-full">
       {/* Top Contact Bar */}
       <Banner />
 
@@ -11,6 +11,6 @@ function Navbar() {
       <PageHeader />
     </div>
   );
-}
+};
 
 export default Navbar;
