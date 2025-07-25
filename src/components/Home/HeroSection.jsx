@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import marine1 from "../../assets/ocean1.jpg";
-import marine2 from "../../assets/ocean2.jpg";
+import marine1 from "../../assets/ocean6.jpg";
+import marine2 from "../../assets/ocean5.jpg";
 import marine3 from "../../assets/ocean3.jpg";
-import marine4 from "../../assets/ocean4.jpg";
 import Button from "../shared/Button";
 
 const items = [
@@ -18,10 +17,6 @@ const items = [
   {
     image: marine3,
     title: "Education & Community Engagement",
-  },
-  {
-    image: marine4,
-    title: "Marine Justice & Legal Advocacy Program",
   },
 ];
 
@@ -108,7 +103,7 @@ export default function HeroSection() {
         </span>
         <Button
           onClick={() => (window.location.href = "#donate")}
-          className="rounded-b-full md:rounded-b-lg flex flex-col p-3 bg-blue-600 text-white transition duration-300 ease-in-out hover:bg-orange-500"
+          className="rounded-b-full md:rounded-b-lg flex flex-col p-3 text-white transition duration-300 ease-in-out "
           size={"lg"}
         >
           <span className="font-bold">Make a Difference Today &rarr;</span>
