@@ -29,13 +29,13 @@ function GetInvolved() {
   ];
 
   return (
-    <section className="bg-blue-50 text-blue-900 py-16 px-6 md:px-16">
+    <section className="bg-blue-50 text-blue-900 py-20">
       {/* Header Image */}
-      <div className="rounded-xl overflow-hidden hover:shadow-md mb-12 shadow-[inset_-4px_-4px_10px_rgba(0,0,0,0.2)]">
+      <div className="overflow-hidden hover:shadow-md mb-12 shadow-[inset_-4px_-4px_10px_rgba(0,0,0,0.2)]">
         <img
           src="https://lapa.africa/images/support.jpg"
           alt="Crab in Water Bottle"
-          className="w-full h-[350px] object-cover"
+         className="w-full h-[350px] object-contain sm:object-cover"
         />
       </div>
 
@@ -51,7 +51,7 @@ function GetInvolved() {
       </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 px-6">
         {data.map((item, index) => (
           <div
             key={index}
