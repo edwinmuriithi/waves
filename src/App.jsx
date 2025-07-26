@@ -7,7 +7,6 @@ import Contact from "./components/Contact/Contact";
 import GetInvolved from "./components/Involved/GetInvolved";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OurApproach from "./components/About/OurApproach";
-import OurTeam from "./components/About/OurTeam";
 import TakeAction from "./components/TakeAction/TakeAction";
 import Navbar from "./components/Header/Header";
 
@@ -25,7 +24,6 @@ const App = () => {
           <Route path="/take-action" element={<TakeAction />} />
           <Route path="/get-involved" element={<GetInvolved />} />
           <Route path="/our-approach" element={<OurApproach />} />
-          <Route path="our-team" element={<OurTeam />} />
         </Routes>
         <Footer />
       </Router>

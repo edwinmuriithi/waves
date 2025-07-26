@@ -26,21 +26,20 @@ export default function HeroSection() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Preload images
     const preloadImages = () => {
       return Promise.all(
         items.map((item) => {
           return new Promise((resolve) => {
             const img = new Image();
             img.src = item.image;
-            img.onload = resolve; // Resolve when the image is loaded
+            img.onload = resolve;
           });
         })
       );
     };
 
     preloadImages().then(() => {
-      setLoading(false); // Set loading to false when all images are loaded
+      setLoading(false);
     });
 
     const id = setInterval(() => {
@@ -60,7 +59,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-200 md:h-screen overflow-hidden">
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black">
           <span className="text-white">Loading...</span>
@@ -77,40 +76,34 @@ export default function HeroSection() {
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
-              zIndex: index === i ? 1 : 0, // Ensure the current image is on top
+              zIndex: index === i ? 1 : 0,
             }}
-            initial={{ opacity: 0, x: direction === "next" ? 100 : -100 }} // Start from the right or left
-            animate={{ opacity: 1, x: 0 }} // Move to the center
-            exit={{ opacity: 0, x: direction === "next" ? -100 : 100 }} // Exit to the left or right
+            initial={{ opacity: 0, x: direction === "next" ? 100 : -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: direction === "next" ? -100 : 100 }}
             transition={{ duration: 0.5 }}
           >
-            {/* Overlay to reduce contrast */}
-            <div className="absolute inset-0 bg-black opacity-40" />{" "}
-            {/* Adjust opacity as needed */}
-            <h1 className="absolute md:relative text-center text-2xl top-50 md:top-1 md:text-5xl">
+            <div className="absolute inset-0 bg-black opacity-40" />
+            <h1 className="absolute text-center text-xl md:text-3xl top-1/2 transform -translate-y-1/2">
               {item.title}
             </h1>
           </motion.div>
         ))}
       </AnimatePresence>
 
-      {/* Button Container with Dark Blue Background */}
       <div className="absolute bottom-5 left-5 z-50 flex flex-col items-start backdrop-blur-3xl p-4 mb-2 w-fit rounded-lg bg-blue-900 bg-opacity-70">
-        {" "}
-        {/* Dark blue background with transparency */}
         <span className="text-white text-lg md:text-2xl text-center p-4 mb-4">
           Your support empowers our ocean conservation efforts
         </span>
         <Button
           onClick={() => (window.location.href = "#donate")}
-          className="rounded-b-full md:rounded-b-lg flex flex-col p-3 text-white transition duration-300 ease-in-out "
+          className="rounded-b-full md:rounded-b-lg flex flex-col p-3 text-white transition duration-300 ease-in-out"
           size={"lg"}
         >
           <span className="font-bold">Make a Difference Today &rarr;</span>
         </Button>
       </div>
 
-      {/* Navigation buttons */}
       <div className="absolute inset-0 flex items-center justify-between px-4">
         <button
           onClick={handlePrev}
