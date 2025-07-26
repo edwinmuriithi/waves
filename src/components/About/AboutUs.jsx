@@ -1,6 +1,8 @@
 import React from "react";
 import marine from "../../assets/ocean-waves.jpg";
 import missionImage from "../../assets/mission.jpeg";
+import Shark from "../../assets/shark.jpg"
+import TypewriterText from "./TypeWriterText";
 
 const AboutUs = () => {
   return (
@@ -112,6 +114,15 @@ const AboutUs = () => {
           and hold violators accountable.
         </p>
       </div>
+        <div className="mt-2 h-165 rounded-2xl font-bold text-white flex items-center font-serif font-stretch-200% px-3"
+         style={{
+         backgroundImage: `url(${Shark})`,
+        }}  
+        >
+          <div> <TypewriterText /></div>
+         
+
+        </div>
     </section>
   );
 };
