@@ -1,10 +1,22 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import marine from "../../assets/ocean-waves.jpg";
 import missionImage from "../../assets/mission.jpeg";
 import Shark from "../../assets/shark.jpg";
 import TypewriterText from "./TypewriterText";
+import { actionItems } from "../TakeAction/actions";
 
 const AboutUs = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Effect to change the current index every few seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % actionItems.length);
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
   return (
     <section className="bg-blue-50 text-blue-900 ">
       <div className="py-16 px-6 md:px-16">
@@ -65,38 +77,38 @@ const AboutUs = () => {
 
         {/* Shark Icon */}
 
-        <div className="flex-row md:flex gap-5 mx-auto items-center">
-          <p className="text-base md:text-lg leading-relaxed">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto ">
+          <p className=" md:text-lg leading-relaxed p-5 shadow-xs shadow-orange-500 ">
             Each year, over <strong>97 million sharks</strong> are slaughtered,
             many for the cruel and unsustainable shark fin trade, a global
             market valued at over USD 400 million.
           </p>
 
-          <p className="text-base md:text-lg leading-relaxed mb-4">
+          <p className=" md:text-lg leading-relaxed p-5 shadow-xs shadow-orange-500 ">
             Since the 1970s, shark and ray populations have plummeted by more
             than 71%, with iconic species like hammerheads, blacktips, and reef
             sharks now listed as endangered or critically endangered.
           </p>
 
-          <p className="text-base md:text-lg leading-relaxed">
+          <p className=" md:text-lg leading-relaxed p-5 shadow-xs shadow-orange-500 ">
             In Kenya, over <strong>80% of native shark and ray species</strong>{" "}
             face extinction threats due to illegal fishing, unregulated bycatch,
             and poor enforcement.
           </p>
 
-          <p className="text-base md:text-lg leading-relaxed mb-4">
+          <p className=" md:text-lg leading-relaxed p-5 shadow-xs shadow-orange-500 ">
             Limited public awareness and weak legal safeguards have left the
             country’s marine biodiversity vulnerable to exploitation.
           </p>
 
-          <p className="text-base md:text-lg leading-relaxed">
+          <p className=" md:text-lg leading-relaxed p-5 shadow-xs shadow-orange-500 ">
             WAVES was formed to reverse this. We aim to end illegal shark
             finning, stop trafficking of endangered species, and ensure Kenya’s
             marine ecosystems are governed by{" "}
             <strong>justice, science, and community action</strong>.
           </p>
 
-          <p className="text-base md:text-lg leading-relaxed mt-4">
+          <p className=" md:text-lg leading-relaxed p-5 shadow-xs shadow-orange-500 ">
             We unite{" "}
             <strong>
               lawyers, scientists, advocates, and local communities
@@ -107,14 +119,19 @@ const AboutUs = () => {
         </div>
       </div>
       <div
-        className="bg-cover bg-no-repeat h-165 font-bold text-white flex items-center font-serif font-stretch-200% px-3"
+        className="bg-cover bg-no-repeat h-165 font-bold text-white flex justify-space-between items-center font-serif font-stretch-200% px-3"
         style={{
           backgroundImage: `url(${Shark})`,
         }}
       >
-        <div>
+        <div className="flex-1">
           {" "}
           <TypewriterText />
+        </div>
+        <div className="flex-1 items-center w-full lg:w-1/2 p-4 shadow-md shadow-orange-500">
+          <div className=" overflow-hidden shadow-m hover:shadow-lg transition-all p-4">
+            <p className="text-lg">{actionItems[currentIndex].description}</p>
+          </div>
         </div>
       </div>
     </section>
