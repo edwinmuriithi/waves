@@ -59,7 +59,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative h-200 md:h-screen overflow-hidden">
+    <div className="relative h-150 md:h-screen overflow-hidden">
       {loading && (
         <div className="absolute inset-0 flex items-center justify-center bg-black">
           <span className="text-white">Loading...</span>
@@ -84,7 +84,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
           >
             <div className="absolute inset-0 bg-black opacity-40" />
-            <h1 className="absolute text-center text-xl md:text-3xl top-1/2 transform -translate-y-1/2">
+            <h1 className="absolute text-center text-2xl md:text-6xl top-1/2 transform -translate-y-1/2">
               {item.title}
             </h1>
           </motion.div>
