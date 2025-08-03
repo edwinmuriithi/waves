@@ -1,10 +1,10 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import marine from "../../assets/ocean-waves.jpg";
 import missionImage from "../../assets/mission.jpeg";
 import Shark from "../../assets/shark.jpg";
-import TypewriterText from "./TypewriterText";
 import { actionItems } from "../TakeAction/actions";
+import Typewriter from "typewriter-effect";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,6 +17,9 @@ const AboutUs = () => {
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
+
+  const categories = [...new Set(actionItems.map((item) => item.category))];
+
   return (
     <section className="bg-blue-50 text-blue-900 ">
       <div className="py-16 px-6 md:px-16">
@@ -75,8 +78,6 @@ const AboutUs = () => {
           Why We Exist
         </h2>
 
-        {/* Shark Icon */}
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto ">
           <p className=" md:text-lg leading-relaxed p-5 shadow-xs shadow-orange-500 ">
             Each year, over <strong>97 million sharks</strong> are slaughtered,
@@ -118,19 +119,62 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
+
+      {/* Typewriter and Description Section */}
       <div
-        className="bg-cover bg-no-repeat h-165 font-bold text-white flex justify-space-between items-center font-serif font-stretch-200% px-3"
+        className="bg-cover bg-no-repeat h-auto md:h-165 font-bold text-white flex flex-col lg:flex-row justify-between items-center font-serif px-3"
         style={{
           backgroundImage: `url(${Shark})`,
         }}
       >
-        <div className="flex-1">
-          {" "}
-          <TypewriterText />
+        <div className="flex-1 flex flex-col justify-center  p-4">
+          <div className="flex flex-col gap-6">
+            <div className=" font-serif font-extrabold text-white leading-10 md:leading-20 text-center md:text-left">
+              <span className="mr-4 text-4xl md:text-5xl">
+                Join the Movement
+              </span>
+              <Typewriter
+                options={{
+                  strings: [
+                    " Protect Marine Life",
+                    " Fight Plastic Pollution",
+                    " Empower Coastal Communities",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                  delay: 70,
+                  deleteSpeed: 100,
+                }}
+              />
+            </div>
+            <div className="mt-4">
+              <ul className="flex flex-wrap justify-center lg:justify-start gap-4 mb-4">
+                {categories.map((category, index) => (
+                  <li
+                    key={index}
+                    className="bg-blue-800 text-white rounded-full px-4 py-2 text-center font-medium"
+                  >
+                    {category}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="text-lg font-bold text-center lg:text-left">
+              Take action to protect our ocean and its creatures
+            </p>
+            <Link
+              to="/take-action"
+              className="bg-blue-900 hover:bg-orange-600 text-white w-full lg:w-1/2 text-lg font-bold py-2 px-4 rounded-xl transition-all hover:shadow-md text-center"
+            >
+              Take Action
+            </Link>
+          </div>
         </div>
-        <div className="flex-1 items-center w-full lg:w-1/2 p-4 shadow-md shadow-orange-500">
-          <div className=" overflow-hidden shadow-m hover:shadow-lg transition-all p-4">
-            <p className="text-lg">{actionItems[currentIndex].description}</p>
+        <div className="flex-1 flex items-start p-4 shadow-md shadow-orange-500">
+          <div className="overflow-hidden shadow-md hover:shadow-lg transition-all p-4 w-full">
+            <p className="text-lg md:text-xl">
+              {actionItems[currentIndex].description}
+            </p>
           </div>
         </div>
       </div>
