@@ -2,7 +2,6 @@ import HomePage from "./components/Home/HomePage";
 import Footer from "./components/Footer/Footer";
 import AboutUs from "./components/About/AboutUs";
 import OurPrograms from "./components/Programs/OurPrograms";
-import Publications from "./components/Pubs/Publications";
 import Contact from "./components/Contact/Contact";
 import GetInvolved from "./components/Involved/GetInvolved";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -19,7 +18,6 @@ const App = () => {
           <Route path="/" exact element={<HomePage />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/our-programs" element={<OurPrograms />} />
-          <Route path="/resources" element={<Publications />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/take-action" element={<TakeAction />} />
           <Route path="/get-involved" element={<GetInvolved />} />
