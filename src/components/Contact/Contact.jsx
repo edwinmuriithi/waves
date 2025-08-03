@@ -27,9 +27,9 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className="">
       {/* Header */}
-      <div className="h-40 text-white p-4 font-sans flex justify-center flex-col items-center bg-blue-950">
+      <div className="h-40 text-white p-4 font-sans flex justify-center flex-col items-center bg-blue-950 py-25 md:py-50 ">
         <h1 className="font-medium text-4xl">Contact Us</h1>
         <p className="text-2xl font-serif">Let's get in touch</p>
       </div>
@@ -43,7 +43,6 @@ const Contact = () => {
         }}
       >
         <div className="flex flex-col md:flex-row gap-8 backdrop-blur-sm bg-gray-800/60 text-white rounded-lg shadow-2xl p-6 sm:p-8 w-full md:w-3/4 max-w-4xl">
-          
           {/* Contact Info */}
           <div className="flex-1">
             <p>
@@ -59,12 +58,11 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="flex-1 flex flex-col gap-6"
-          >
+          <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-6">
             <div>
-              <label htmlFor="name" className="block mb-1 text-sm">Your Name</label>
+              <label htmlFor="name" className="block mb-1 text-sm">
+                Your Name
+              </label>
               <input
                 id="name"
                 name="name"
@@ -78,7 +76,9 @@ const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block mb-1 text-sm">Your Email</label>
+              <label htmlFor="email" className="block mb-1 text-sm">
+                Your Email
+              </label>
               <input
                 id="email"
                 name="email"
@@ -91,7 +91,9 @@ const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="block mb-1 text-sm">Message</label>
+              <label htmlFor="message" className="block mb-1 text-sm">
+                Message
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -111,7 +113,9 @@ const Contact = () => {
             </button>
 
             {submitted && (
-              <p className="text-blue-400 text-sm mt-2">Message sent! We'll get back to you soon.</p>
+              <p className="text-blue-400 text-sm mt-2">
+                Message sent! We'll get back to you soon.
+              </p>
             )}
           </form>
         </div>

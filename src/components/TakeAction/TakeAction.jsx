@@ -10,7 +10,7 @@ const TakeAction = () => {
       : actionItems.filter((item) => item.category === filter);
 
   return (
-    <section className="bg-gray-50">
+    <section className="bg-gray-50 py-25 md:py-50 px-6 md:px-16">
       {/* Main Title */}
       <h1 className="text-center text-4xl font-bold text-blue-900 my-8">
         Take Action!
