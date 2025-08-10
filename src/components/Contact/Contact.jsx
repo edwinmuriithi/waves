@@ -1,4 +1,6 @@
 import { useState } from "react";
+import contactImg from "../../assets/contact-banner.jpg";
+import mainImg from "../../assets/ocean.jpg";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -19,105 +21,140 @@ const Contact = () => {
 
     console.log("Form submitted:", form);
     setSubmitted(true);
-
-    // Reset form
     setForm({ name: "", email: "", message: "" });
-
     setTimeout(() => setSubmitted(false), 3000);
   };
 
   return (
-    <div className="">
+    <div className="font-sans text-gray-900">
       {/* Header */}
-      <div className="h-40 text-white p-4 font-sans flex justify-center flex-col items-center bg-blue-950 py-25 md:py-50 ">
-        <h1 className="font-medium text-4xl">Contact Us</h1>
-        <p className="text-2xl font-serif">Let's get in touch</p>
+      <div
+        className="relative h-[320px] md:h-[420px] flex items-center justify-center"
+        style={{
+          backgroundImage: `url(${contactImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 text-center text-white px-4">
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">
+            Contact Us
+          </h1>
+          <p className="text-lg md:text-2xl max-w-2xl mx-auto font-light">
+            Let’s get in touch — we’d love to hear from you.
+          </p>
+        </div>
       </div>
 
       {/* Main Section */}
       <section
-        className="flex flex-col justify-center items-center min-h-screen bg-cover bg-center px-4"
+        className="flex flex-col md:flex-row justify-center items-start min-h-screen px-4 py-12 gap-10"
         style={{
-          backgroundImage:
-            "url('https://i.pinimg.com/736x/08/b4/0c/08b40c4e6b025b2704df1ca8c202b519.jpg')",
+          backgroundImage: `url(${mainImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
-        <div className="flex flex-col md:flex-row gap-8 backdrop-blur-sm bg-gray-800/60 text-white rounded-lg shadow-2xl p-6 sm:p-8 w-full md:w-3/4 max-w-4xl">
-          {/* Contact Info */}
-          <div className="flex-1">
-            <p>
-              <strong>Our Address</strong> <br />
-              00100, Nairobi <br />
-              Nairobi, Kenya
-            </p>
-            <p className="mt-4">
-              <strong>Contact</strong> <br />
-              Mobile: +254716152699 <br />
-              Mail: info@lapa.africa
-            </p>
+        {/* Contact Form */}
+        <form
+          onSubmit={handleSubmit}
+          className="flex-1 flex flex-col gap-6 backdrop-blur-md bg-gray-900/80 text-white 
+          rounded-xl shadow-lg transition-all duration-300 p-8 w-full max-w-2xl border border-white/10"
+        >
+          {["name", "email"].map((field) => (
+            <div key={field}>
+              <label
+                htmlFor={field}
+                className="block mb-1 text-sm font-semibold uppercase tracking-wide"
+              >
+                {field === "name" ? "Your Name" : "Your Email"}
+              </label>
+              <input
+                id={field}
+                name={field}
+                type={field === "email" ? "email" : "text"}
+                value={form[field]}
+                onChange={handleChange}
+                placeholder={`Enter your ${field}`}
+                className="w-full bg-transparent border-b border-gray-400 focus:border-blue-500 focus:outline-none 
+                py-2 text-white placeholder-gray-400 transition-colors font-light"
+                autoFocus={field === "name"}
+              />
+            </div>
+          ))}
+
+          <div>
+            <label
+              htmlFor="message"
+              className="block mb-1 text-sm font-semibold uppercase tracking-wide"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              value={form.message}
+              onChange={handleChange}
+              placeholder="Write your message"
+              className="w-full bg-transparent border-b border-gray-400 focus:border-blue-500 focus:outline-none 
+              py-2 text-white placeholder-gray-400 resize-none transition-colors font-light"
+            />
           </div>
 
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-6">
+          <button
+            type="submit"
+            className="bg-blue-700 hover:bg-blue-800 transition-all duration-200 text-white py-2 px-6 rounded-md mt-2 self-start shadow-md hover:shadow-lg font-semibold"
+          >
+            Submit
+          </button>
+
+          {submitted && (
+            <p className="text-green-400 text-sm mt-2">
+              ✅ Message sent! We’ll get back to you soon.
+            </p>
+          )}
+        </form>
+
+        {/* Address Card */}
+        <div
+          className="flex-1 backdrop-blur-md bg-gray-900/80 text-white 
+          rounded-xl shadow-lg transition-all duration-300 p-8 w-full max-w-md border border-white/10"
+        >
+          <div className="space-y-6">
             <div>
-              <label htmlFor="name" className="block mb-1 text-sm">
-                Your Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Enter your name"
-                className="w-full bg-transparent border-b border-white focus:outline-none py-2 text-white placeholder-gray-300"
-                autoFocus
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block mb-1 text-sm">
-                Your Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Enter your email"
-                className="w-full bg-transparent border-b border-white focus:outline-none py-2 text-white placeholder-gray-300"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block mb-1 text-sm">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                value={form.message}
-                onChange={handleChange}
-                placeholder="Write your message"
-                className="w-full bg-transparent border-b border-white focus:outline-none py-2 text-white placeholder-gray-300 resize-none"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="bg-blue-700 hover:blue-800 transition-colors duration-200 text-white py-2 px-6 rounded mt-2 self-start"
-            >
-              Submit
-            </button>
-
-            {submitted && (
-              <p className="text-blue-400 text-sm mt-2">
-                Message sent! We'll get back to you soon.
+              <h2 className="text-xl font-bold uppercase tracking-wide">
+                Our Address
+              </h2>
+              <p className="text-gray-300 mt-1 font-light leading-relaxed">
+                00100, Nairobi <br />
+                Nairobi, Kenya
               </p>
-            )}
-          </form>
+            </div>
+            <div>
+              <h2 className="text-xl font-bold uppercase tracking-wide">
+                Contact
+              </h2>
+              <p className="text-gray-300 mt-1 font-light leading-relaxed">
+                Mobile:{" "}
+                <a
+                  href="tel:+254716152699"
+                  className="text-blue-400 hover:underline"
+                >
+                  +254 716 152 699
+                </a>
+                <br />
+                Mail:{" "}
+                <a
+                  href="mailto:info@lapa.africa"
+                  className="text-blue-400 hover:underline"
+                >
+                  info@lapa.africa
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
