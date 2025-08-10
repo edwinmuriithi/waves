@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="flex flex-wrap justify-center space-x-5 text-2xl">
           <motion.a
             whileHover={{ scale: 1.2 }}
-            href="https://facebook.com"
+            href="https://m.facebook.com/AnimalLawAfrica/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
@@ -46,7 +46,7 @@ const Footer = () => {
           </motion.a>
           <motion.a
             whileHover={{ scale: 1.2 }}
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/company/lawyers-for-animal-protection-in-africa-lapa/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -55,7 +55,7 @@ const Footer = () => {
           </motion.a>
           <motion.a
             whileHover={{ scale: 1.2 }}
-            href="https://twitter.com"
+            href="https://x.com/AnimalLawAfric"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
@@ -64,7 +64,7 @@ const Footer = () => {
           </motion.a>
           <motion.a
             whileHover={{ scale: 1.2 }}
-            href="https://instagram.com"
+            href="https://www.instagram.com/animallawafrica"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
