@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import ocean from "../../assets/ocean-waves.jpg";
-import policyImg from "../../assets/policy.png";
-import litigationImg from "../../assets/strategic.jpg";
-import communityImg from "../../assets/Community.jpg";
-import investigationImg from "../../assets/litigation-investigations.jpg";
+
+import ocean from "../assets/ocean-waves.jpg";
+import policyImg from "../assets/policy.png";
+import litigationImg from "../assets/strategic.jpg";
+import communityImg from "../assets/Community.jpg";
+import investigationImg from "../assets/litigation-investigations.jpg";
 
 const strategies = [
   {
@@ -79,13 +78,6 @@ const strategies = [
 ];
 
 const OurApproach = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: "ease-out",
-      once: true,
-    });
-  }, []);
 
   return (
     <section>

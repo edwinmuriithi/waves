@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { actionItems } from "./actions";
+import { actionItems } from "../components/data/actions";
 
 const TakeAction = () => {
   const [filter, setFilter] = useState("All");

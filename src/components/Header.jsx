@@ -1,5 +1,5 @@
-import Banner from "../shared/Banner";
-import PageHeader from "../shared/Header";
+import Banner from "./shared/Banner";
+import PageHeader from "./shared/Header";
 
 const Navbar = () => {
   return (

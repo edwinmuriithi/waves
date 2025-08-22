@@ -1,8 +1,9 @@
-import HeroSection from "./HeroSection";
-import { Link } from "react-router-dom";
-import AboutUs from "../About/AboutUs";
+import HeroSection from "../components/HeroSection";
+import AboutUs from "../components/AboutUs";
 
 function HomePage() {
+
+
   return (
     <div className="text-gray-800">
       <HeroSection />
