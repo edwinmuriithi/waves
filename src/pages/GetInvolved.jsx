@@ -8,7 +8,7 @@ function GetInvolved() {
       heading: "Become a Volunteer",
       text: "Join us as a volunteer and help make a difference in our various projects and initiatives.",
       btn: "Become a Volunteer",
-      link: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Becoming+a+LAPA+Volunteer&to=info@lapa.africa",
+      link: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Becoming+a+WAVES+Volunteer&to=waves@lapa.africa",
     },
     {
       image: "https://lapa.africa/images/get-involved/donate12.jpg",
@@ -23,7 +23,7 @@ function GetInvolved() {
       heading: "Partner with Us",
       text: "Become a partner and collaborate with us on projects that promote sustainability and conservation.",
       btn: "Become a Partner",
-      link: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Becoming+a+LAPA+Partner&to=info@lapa.africa",
+      link: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Becoming+a+WAVES+Partner&to=waves@lapa.africa",
     },
     {
       image:
@@ -31,7 +31,7 @@ function GetInvolved() {
       heading: "Leave a Gift in Your Will",
       text: "Find out how you can leave a legacy gift in your will to support marine conservation and justice.",
       btn: "Leave a Gift",
-      link: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Leaving+a+Gift+in+my+Will&to=info@lapa.africa",
+      link: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Leaving+a+Gift+in+my+Will&to=waves@lapa.africa",
     },
   ];
 

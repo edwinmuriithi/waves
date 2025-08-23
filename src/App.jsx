@@ -25,9 +25,8 @@ const App = () => {
   return (
     <main>
       <Router>
-        {/* ✅ Global SEO applied here */}
+      
         <DefaultSEO />
-
         <Navbar />
         <Routes>
           <Route path="/" exact element={<HomePage />} />
