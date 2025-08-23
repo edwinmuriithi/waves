@@ -163,10 +163,10 @@ const Contact = () => {
                 <br />
                 Mail:{" "}
                 <a
-                  href="mailto:info@lapa.africa"
+                  href="mailto:waves@lapa.africa"
                   className="text-blue-400 hover:underline"
                 >
-                  info@lapa.africa
+                  waves@lapa.africa
                 </a>
               </p>
             </div>
