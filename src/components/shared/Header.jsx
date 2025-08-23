@@ -32,7 +32,10 @@ export default function PageHeader() {
 
   return (
     <header className="inset-x-0 top-0 z-50 border-b border-blue-200 sticky bg-white">
-      <nav className="flex items-center justify-between p-2 lg:px-6" aria-label="Global">
+      <nav
+        className="flex items-center justify-between p-2 lg:px-6"
+        aria-label="Global"
+      >
         <Link to="/" className="flex lg:flex-1 gap-x-2 items-center">
           {/* <img className="h-14 w-auto" src="/logo.png" alt="Logo" /> */}
           <p className="font-semibold hidden md:block leading-6 uppercase text-gray-950">
@@ -109,10 +112,10 @@ export default function PageHeader() {
         <div className="fixed inset-0 z-50" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-blue-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link to="/" onClick={handleCloseMenu} className="-m-1.5 p-1.5">
               <span className="sr-only">WAVES</span>
               {/* <img className="h-14 w-auto" src="/logo.png" alt="Logo" /> */}
-            </a>
+            </Link>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-white"
@@ -122,40 +125,55 @@ export default function PageHeader() {
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
+
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
                   <div key={item.name}>
-                    <button
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-orange-600 w-full text-left"
-                      onClick={() => {
-                        if (item.withLinks) {
-                          setOpenDropdown(openDropdown === item.name ? null : item.name);
-                        } else {
-                          handleCloseMenu();
-                        }
-                      }}
-                    >
-                      {item.name}
-                    </button>
-                    {item.withLinks && item.links?.length > 0 && openDropdown === item.name && (
-                      <div className="ml-4 mt-1 space-y-1">
-                        {item.links.map((sub) => (
-                          <Link
-                            key={sub.name}
-                            to={sub.href}
-                            className="block text-sm text-white px-3 py-1 hover:bg-orange-700 rounded"
-                            onClick={handleCloseMenu}
-                          >
-                            {sub.name}
-                          </Link>
-                        ))}
-                      </div>
+                    {item.withLinks ? (
+                      <>
+                        {/* Dropdown toggle */}
+                        <button
+                          className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-orange-600 w-full text-left"
+                          onClick={() =>
+                            setOpenDropdown(
+                              openDropdown === item.name ? null : item.name
+                            )
+                          }
+                        >
+                          {item.name}
+                        </button>
+                        {item.links?.length > 0 &&
+                          openDropdown === item.name && (
+                            <div className="ml-4 mt-1 space-y-1">
+                              {item.links.map((sub) => (
+                                <Link
+                                  key={sub.name}
+                                  to={sub.href}
+                                  className="block text-sm text-white px-3 py-1 hover:bg-orange-700 rounded"
+                                  onClick={handleCloseMenu}
+                                >
+                                  {sub.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                      </>
+                    ) : (
+                      // Regular nav items
+                      <Link
+                        to={item.href}
+                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-orange-600"
+                        onClick={handleCloseMenu}
+                      >
+                        {item.name}
+                      </Link>
                     )}
                   </div>
                 ))}
               </div>
+
               <div className="py-6">
                 <a
                   href="#donate"

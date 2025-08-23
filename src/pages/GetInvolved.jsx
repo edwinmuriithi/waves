@@ -1,9 +1,6 @@
 import React from "react";
 
 function GetInvolved() {
-
-
-   
   const data = [
     {
       image:
@@ -11,12 +8,14 @@ function GetInvolved() {
       heading: "Become a Volunteer",
       text: "Join us as a volunteer and help make a difference in our various projects and initiatives.",
       btn: "Become a Volunteer",
+      link: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Becoming+a+LAPA+Volunteer&to=info@lapa.africa",
     },
     {
       image: "https://lapa.africa/images/get-involved/donate12.jpg",
       heading: "Donate",
       text: "Support our work by making a donation. Your contribution helps us continue our mission.",
       btn: "Donate to Our Cause",
+      link: "https://www.paypal.com/donate?token=kPAntvt8ZIZ53EHGSiSpPrEFd91bHr-WvlDEfYRT-P_UdTQdTy4-mHHD3k4n0yD5CihfegmWyLOLh13I",
     },
     {
       image:
@@ -24,6 +23,7 @@ function GetInvolved() {
       heading: "Partner with Us",
       text: "Become a partner and collaborate with us on projects that promote sustainability and conservation.",
       btn: "Become a Partner",
+      link: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Becoming+a+LAPA+Partner&to=info@lapa.africa",
     },
     {
       image:
@@ -31,6 +31,7 @@ function GetInvolved() {
       heading: "Leave a Gift in Your Will",
       text: "Find out how you can leave a legacy gift in your will to support marine conservation and justice.",
       btn: "Leave a Gift",
+      link: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Leaving+a+Gift+in+my+Will&to=info@lapa.africa",
     },
   ];
 
@@ -62,23 +63,28 @@ function GetInvolved() {
         {data.map((item, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300  flex flex-col"
+            className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 flex flex-col"
           >
             <img
               src={item.image}
               alt={item.heading}
               className="h-100 w-full object-cover transition duration-1000 ease-in-out transform hover:scale-110"
             />
-            <div className="p-5 flex flex-col justify-between flex-grow ">
+            <div className="p-5 flex flex-col justify-between flex-grow">
               <h3 className="text-x1 text-2xl font-serif font-semibold text-blue-800 hover:underline decoration-cyan-500 decoration-4 mb-4 transition-all duration-700 ease-in-out">
                 {item.heading}
               </h3>
               <p className="text-sm text-blue-700 mb-4 font-serif">
                 {item.text}
               </p>
-              <button className="mt-auto bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-md self-start hover:scale-105 hover:cursor-pointer">
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-auto bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-md self-start hover:scale-105 hover:cursor-pointer transition-transform"
+              >
                 {item.btn}
-              </button>
+              </a>
             </div>
           </div>
         ))}
