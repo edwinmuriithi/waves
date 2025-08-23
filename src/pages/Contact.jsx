@@ -1,8 +1,24 @@
 import { useState } from "react";
-import contactImg from "../../assets/contact-banner.jpg";
-import mainImg from "../../assets/ocean.jpg";
+import contactImg from "../assets/contact-banner.jpg";
+import mainImg from "../assets/ocean.jpg";
+import useSEO from "../hooks/useSEO"; 
 
 const Contact = () => {
+
+  useSEO({
+    title: "Contact Us | WAVES ",
+    description:
+      "Get in touch with WAVES . We are dedicated to marine conservation, research, advocacy, and community empowerment for ocean sustainability.",
+    keywords:
+      "WAVES, contact, marine conservation, ocean biodiversity, Kenya, NGOs",
+    image: "https://waves.lapa.africa/waves-og.png",
+    url: "https://waves.lapa.africa/contact",
+  });
+
+
+
+
+
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 

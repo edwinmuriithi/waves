@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import marine1 from "../../assets/ocean6.jpg";
-import marine2 from "../../assets/ocean5.jpg";
-import marine3 from "../../assets/ocean3.jpg";
-import Button from "../shared/Button";
+import marine1 from "../assets/ocean6.jpg";
+import marine2 from "../assets/ocean5.jpg";
+import marine3 from "../assets/ocean3.jpg";
+import Button from "./shared/Button";
 
 const items = [
   {

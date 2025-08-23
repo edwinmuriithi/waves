@@ -1,18 +1,33 @@
-import HomePage from "./components/Home/HomePage";
-import Footer from "./components/Footer/Footer";
-import AboutUs from "./components/About/AboutUs";
-import OurPrograms from "./components/Programs/OurPrograms";
-import Contact from "./components/Contact/Contact";
-import GetInvolved from "./components/Involved/GetInvolved";
+import HomePage from "./pages/HomePage";
+import Footer from "./components/Footer";
+import AboutUs from "./components/AboutUs";
+import OurPrograms from "./pages/OurPrograms";
+import Contact from "./pages/Contact";
+import GetInvolved from "./pages/GetInvolved";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import OurApproach from "./components/About/OurApproach";
-import TakeAction from "./components/TakeAction/TakeAction";
-import Navbar from "./components/Header/Header";
+import OurApproach from "./pages/OurApproach";
+import TakeAction from "./pages/TakeAction";
+import Navbar from "./components/Header";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import DefaultSEO from "./components/DefaultSEO"; 
 
 const App = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-out",
+      once: true,
+    });
+  }, []);
+
   return (
     <main>
       <Router>
+        {/* ✅ Global SEO applied here */}
+        <DefaultSEO />
+
         <Navbar />
         <Routes>
           <Route path="/" exact element={<HomePage />} />

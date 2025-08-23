@@ -1,9 +1,58 @@
 import React from "react";
-import heroImage from "../../assets/Marine-Conservation.jpg";
-import lawImg from "../../assets/justice.webp";
-import jawsImg from "../../assets/marine_life.jpg";
-import communityImg from "../../assets/education.jpg";
+import heroImage from "../assets/Marine-Conservation.jpg";
+import lawImg from "../assets/justice.webp";
+import jawsImg from "../assets/marine_life.jpg";
+import communityImg from "../assets/education.jpg";
 
+//  Small reusable styled list wrapper
+const StyledList = ({ children }) => (
+  <div className="bg-blue-50/60 border border-blue-100 rounded-xl p-4 shadow-sm">
+    {children}
+  </div>
+);
+
+//  Card for each program
+const ProgramCard = ({ program, reverse, aos }) => (
+  <article
+    data-aos={aos}
+    className={`flex flex-col md:flex-row ${
+      reverse ? "md:flex-row-reverse" : ""
+    } items-stretch bg-white rounded-2xl border border-gray-200 overflow-hidden hover:scale-[1.01] transition-transform duration-300`}
+  >
+    {/* Image & Icon */}
+    <div className="md:w-1/3 relative">
+      <img
+        src={program.img}
+        alt={`Illustration for ${program.title}`}
+        className="w-full h-56 md:h-full object-cover"
+        loading="lazy"
+      />
+      <div className="absolute top-4 left-4 bg-white/80 p-2 rounded-full shadow-sm">
+        {program.icon}
+      </div>
+    </div>
+
+    {/* Content */}
+    <div className="flex-1 p-6 md:p-10 flex flex-col justify-center">
+      <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 flex items-center gap-3">
+        {program.title}
+      </h2>
+      <div className="space-y-4 text-gray-700">
+        {React.Children.map(program.content.props.children, (child) => {
+          if (
+            child.type === "ul" ||
+            (child.props && (child.props.className || "").includes("list-disc"))
+          ) {
+            return <StyledList>{child}</StyledList>;
+          }
+          return child;
+        })}
+      </div>
+    </div>
+  </article>
+);
+
+// Programs data
 const programs = [
   {
     title: "Marine Justice & Legal Advocacy Program",
@@ -120,6 +169,7 @@ const programs = [
   },
 ];
 
+//  Main component
 const OurProgram = () => {
   return (
     <section>
@@ -135,10 +185,10 @@ const OurProgram = () => {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Our Programs</h1>
-          <p className="text-lg md:text-2xl max-w-2xl mx-auto">
+          <h2 className="text-lg md:text-2xl max-w-2xl mx-auto">
             Innovative programs for marine justice, wildlife protection, and
             community empowerment in Kenya.
-          </p>
+          </h2>
         </div>
       </div>
 
@@ -146,50 +196,12 @@ const OurProgram = () => {
       <div className="bg-blue-50 text-blue-900 py-16 px-6 md:px-16">
         <div className="max-w-6xl mx-auto space-y-20">
           {programs.map((p, i) => (
-            <article
+            <ProgramCard
               key={p.title}
-              data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
-              className={`flex flex-col md:flex-row ${
-                i % 2 === 1 ? "md:flex-row-reverse" : ""
-              } items-stretch bg-white rounded-2xl border border-gray-200 overflow-hidden hover:scale-[1.01] transition-transform duration-300`}
-            >
-              {/* Image & Icon */}
-              <div className="md:w-1/3 relative">
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  className="w-full h-56 md:h-full object-cover"
-                  loading="lazy"
-                />
-                <div className="absolute top-4 left-4 bg-white/80 p-2 rounded-full shadow-sm">
-                  {p.icon}
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="flex-1 p-6 md:p-10 flex flex-col justify-center">
-                <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 flex items-center gap-3">
-                  {p.title}
-                </h2>
-                <div className="space-y-4 text-gray-700">
-                  {/* Wrap strategy lists in styled boxes */}
-                  {React.Children.map(p.content.props.children, (child) => {
-                    if (
-                      child.type === "ul" ||
-                      (child.props &&
-                        (child.props.className || "").includes("list-disc"))
-                    ) {
-                      return (
-                        <div className="bg-blue-50/60 border border-blue-100 rounded-xl p-4 shadow-sm">
-                          {child}
-                        </div>
-                      );
-                    }
-                    return child;
-                  })}
-                </div>
-              </div>
-            </article>
+              program={p}
+              reverse={i % 2 === 1}
+              aos={i % 2 === 0 ? "fade-right" : "fade-left"}
+            />
           ))}
         </div>
       </div>
